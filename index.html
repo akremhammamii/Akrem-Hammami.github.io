@@ -34,7 +34,7 @@
     .nav-links a{font-size:13px;font-weight:500;color:var(--fg2);text-decoration:none;transition:color .2s}
     .nav-links a:hover{color:var(--ac)}
     .nav-cta{background:var(--fg);color:#fff;font-family:var(--body);font-size:13px;font-weight:500;padding:9px 20px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;transition:background .2s,transform .2s}
-    .nav-cta:hover{background:var(--ac);transform:scale(1.03)}
+    .nav-cta:hover{background:var(--ac);transform:scale(1.03)}\n    .lang-toggle{background:#fff;border:1px solid var(--b2);color:var(--fg);font-family:var(--body);font-size:12px;font-weight:600;padding:8px 14px;border-radius:100px;cursor:pointer;transition:transform .2s,box-shadow .2s}\n    .lang-toggle:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.08)}\n    .lang-toggle{background:#fff;border:1px solid var(--b2);color:var(--fg);font-family:var(--body);font-size:12px;font-weight:600;padding:8px 14px;border-radius:100px;cursor:pointer;transition:transform .2s,box-shadow .2s}\n    .lang-toggle:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.08)}
 
     /* HERO */
     #home{position:relative;z-index:1;padding:96px 48px 80px;max-width:1200px;margin:0 auto}
@@ -293,76 +293,76 @@
 <nav>
   <a href="#home" class="logo">A<span>H</span></a>
   <ul class="nav-links">
-    <li><a href="#dashboard">Dashboard</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#runner">Live Tests</a></li>
-    <li><a href="#arch">Architecture</a></li>
-    <li><a href="#bugs">Bug Hunter</a></li>
-    <li><a href="#xp">Experience</a></li>
+    <li><a href="#dashboard" data-i18n="nav.dashboard">Dashboard</a></li>
+    <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+    <li><a href="#runner" data-i18n="nav.runner">Live Tests</a></li>
+    <li><a href="#arch" data-i18n="nav.arch">Architecture</a></li>
+    <li><a href="#bugs" data-i18n="nav.bugs">Bug Hunter</a></li>
+    <li><a href="#xp" data-i18n="nav.exp">Experience</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Contact me →</a>
+  <a href="#contact" class="nav-cta" data-i18n="nav.contact">Contact me →</a>
 </nav>
 
 <!-- HERO -->
 <section id="home">
-  <div class="badge"><span class="bdot"></span>Available immediately · Ariana, Tunisia</div>
+  <div class="badge" data-i18n="badge.available"><span class="bdot"></span>Available immediately · Ariana, Tunisia</div>
   <h1 class="hero-title">
-    <span class="ln">I test. I break.</span>
-    <span class="ln">I <span class="aw">certify</span> quality.</span>
+    <span class="ln" data-i18n="hero.line1">I test. I break.</span>
+    <span class="ln" data-i18n-html="hero.line2">I <span class="aw">certify</span> quality.</span>
   </h1>
-  <p class="hero-sub"><strong>Akrem Hammami</strong> — QA Automation Engineer with 3 years of experience in <strong>Selenium / Java / BDD</strong>. ISTQB Certified. Sectors: Insurance, SaaS, ERP.</p>
+  <p class="hero-sub" data-i18n-html="hero.sub"><strong>Akrem Hammami</strong> — QA Automation Engineer with 3 years of experience in <strong>Selenium / Java / BDD</strong>. ISTQB Certified. Sectors: Insurance, SaaS, ERP.</p>
   <div class="hero-btns">
-    <a href="#dashboard" class="btn-p">View QA dashboard ↓</a>
-    <a href="https://github.com/akremhammamii" target="_blank" rel="noopener" class="btn-g">GitHub →</a>
+    <a href="#dashboard" class="btn-p" data-i18n="hero.btn.dashboard">View QA dashboard ↓</a>
+    <a href="https://github.com/akremhammamii" target="_blank" rel="noopener" class="btn-g" data-i18n="hero.btn.github">GitHub →</a>
   </div>
   <div class="stats">
-    <div><div class="stat-n">40<sup>+</sup></div><div class="stat-l">Automated tests</div></div>
-    <div><div class="stat-n">85<sup>%</sup></div><div class="stat-l">Pass rate</div></div>
-    <div><div class="stat-n">15<sup>+</sup></div><div class="stat-l">Documented bugs</div></div>
-    <div><div class="stat-n">ISTQB</div><div class="stat-l">Certification</div></div>
+    <div><div class="stat-n">40<sup>+</sup></div><div class="stat-l" data-i18n="stats.automated">Automated tests</div></div>
+    <div><div class="stat-n">85<sup>%</sup></div><div class="stat-l" data-i18n="stats.passrate">Pass rate</div></div>
+    <div><div class="stat-n">15<sup>+</sup></div><div class="stat-l" data-i18n="stats.bugs">Documented bugs</div></div>
+    <div><div class="stat-n">ISTQB</div><div class="stat-l" data-i18n="stats.cert">Certification</div></div>
   </div>
 </section>
 
 <!-- DASHBOARD -->
 <div class="fb dash-bg" id="dashboard">
   <div class="fi">
-    <div class="ey">// 01 — Quality Dashboard</div>
-    <div class="st">My QA metrics</div>
-    <div class="ss">Numbers that speak — like a real quality report.</div>
+    <div class="ey" data-i18n="section.dashboard.ey">// 01 — Quality Dashboard</div>
+    <div class="st" data-i18n="section.dashboard.st">My QA metrics</div>
+    <div class="ss" data-i18n="section.dashboard.ss">Numbers that speak — like a real quality report.</div>
     <div class="metrics rv" id="mrow">
       <div class="mc pu">
-        <div class="ml">Automation Coverage</div>
+        <div class="ml" data-i18n="metric.coverage">Automation Coverage</div>
         <div class="mv" data-t="72" data-s="%">0%</div>
         <div class="mbar-bg"><div class="mbar" data-w="72"></div></div>
-        <div class="mtrend"><span class="tup">↑ Improving</span> — target 85%</div>
+        <div class="mtrend" data-i18n-html="metric.trend.coverage"><span class="tup">↑ Improving</span> — target 85%</div>
       </div>
       <div class="mc bl">
-        <div class="ml">Tests Executed</div>
+        <div class="ml" data-i18n="metric.tests">Tests Executed</div>
         <div class="mv" data-t="40" data-s="+">0</div>
         <div class="mbar-bg"><div class="mbar" data-w="100"></div></div>
-        <div class="mtrend"><span class="tup">↑ Continuous</span> growth</div>
+        <div class="mtrend" data-i18n-html="metric.trend.tests"><span class="tup">↑ Continuous</span> growth</div>
       </div>
       <div class="mc gr">
-        <div class="ml">Pass Rate</div>
+        <div class="ml" data-i18n="metric.pass">Pass Rate</div>
         <div class="mv" data-t="85" data-s="%">0%</div>
         <div class="mbar-bg"><div class="mbar" data-w="85"></div></div>
-        <div class="mtrend"><span class="tup">↑ Stable</span> — target 80%</div>
+        <div class="mtrend" data-i18n-html="metric.trend.pass"><span class="tup">↑ Stable</span> — target 80%</div>
       </div>
       <div class="mc rd">
-        <div class="ml">Bugs Documented</div>
+        <div class="ml" data-i18n="metric.bugs">Bugs Documented</div>
         <div class="mv" data-t="15" data-s="+">0</div>
         <div class="mbar-bg"><div class="mbar" data-w="50"></div></div>
-        <div class="mtrend"><span class="tdn">✓ All</span> documented with steps</div>
+        <div class="mtrend" data-i18n-html="metric.trend.bugs"><span class="tdn">✓ All</span> documented with steps</div>
       </div>
     </div>
     <div class="dash2 rv">
       <div class="dc">
-        <div class="dct">Trend — Tests executed / month</div>
+        <div class="dct" data-i18n="dash.trend.title">Trend — Tests executed / month</div>
         <div class="spark" id="spark"></div>
-        <div class="slabs"><span>Oct</span><span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span></div>
+        <div class="slabs" data-i18n-html="dash.trend.months"><span>Oct</span><span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span></div>
       </div>
       <div class="dc">
-        <div class="dct">Bug distribution by severity</div>
+        <div class="dct" data-i18n="dash.bugdist.title">Bug distribution by severity</div>
         <div class="donut-w">
           <svg width="120" height="120" viewBox="0 0 120 120">
             <circle cx="60" cy="60" r="46" fill="none" stroke="#f0f0f2" stroke-width="16"/>
@@ -373,7 +373,7 @@
             <text x="60" y="55" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="18" fill="#0a0a0f">15</text>
             <text x="60" y="70" text-anchor="middle" font-size="9" fill="#9090a0">bugs</text>
           </svg>
-          <div class="dleg">
+          <div class="dleg" data-i18n-html="dash.bugdist.legend">
             <div class="dli"><div class="ddot" style="background:#dc2626"></div><div><strong>Critical (20%)</strong> — 3</div></div>
             <div class="dli"><div class="ddot" style="background:#f97316"></div><div><strong>High (30%)</strong> — 4</div></div>
             <div class="dli"><div class="ddot" style="background:#eab308"></div><div><strong>Medium (33%)</strong> — 5</div></div>
@@ -388,19 +388,19 @@
 <!-- PROJECTS -->
 <div class="fb" id="projects" style="background:#fff">
   <div class="fi">
-    <div class="ey">// 02 — Automation Projects</div>
-    <div class="st">Built frameworks</div>
-    <div class="ss">Real automation projects — complete architecture, executable tests, CI/CD reports.</div>
+    <div class="ey" data-i18n="section.projects.ey">// 02 — Automation Projects</div>
+    <div class="st" data-i18n="section.projects.st">Built frameworks</div>
+    <div class="ss" data-i18n="section.projects.ss">Real automation projects — complete architecture, executable tests, CI/CD reports.</div>
 
     <div class="proj-grid">
 
       <div class="proj-card featured rv">
         <div class="proj-left">
           <div class="proj-num">01</div>
-          <div class="proj-title">Selenium Cucumber BDD Framework</div>
+          <div class="proj-title" data-i18n="proj1.title">Selenium Cucumber BDD Framework</div>
           <div class="proj-tech-line">Selenium · Java · Cucumber · Maven · Allure</div>
-          <div class="proj-desc">Complete automation framework based on Page Object Model. BDD scenarios in Gherkin, parallel execution, JSON test data management, Allure reports integrated into CI/CD pipeline.</div>
-          <div class="proj-features">
+          <div class="proj-desc" data-i18n="proj1.desc">Complete automation framework based on Page Object Model. BDD scenarios in Gherkin, parallel execution, JSON test data management, Allure reports integrated into CI/CD pipeline.</div>
+          <div class="proj-features" data-i18n-html="proj1.features">
             <div class="pf"><span class="pf-dot green"></span>Page Object Model — By locators</div>
             <div class="pf"><span class="pf-dot green"></span>Cucumber BDD — Gherkin feature files</div>
             <div class="pf"><span class="pf-dot green"></span>Driver Factory — Thread-safe, multi-browser</div>
@@ -409,8 +409,8 @@
             <div class="pf"><span class="pf-dot yellow"></span>Parallel execution — TestNG</div>
           </div>
           <div class="proj-actions">
-            <a href="https://github.com/akremhammamii" target="_blank" rel="noopener" class="btn-p" style="font-size:13px;padding:11px 22px">View on GitHub →</a>
-            <span class="proj-badge">Open Source</span>
+            <a href="https://github.com/akremhammamii" target="_blank" rel="noopener" class="btn-p" style="font-size:13px;padding:11px 22px" data-i18n="proj1.action" data-i18n="proj1.action">View on GitHub →</a>
+            <span class="proj-badge" data-i18n="proj1.badge">Open Source</span>
           </div>
         </div>
         <div class="proj-right">
@@ -438,19 +438,19 @@
 
       <div class="proj-card rv">
         <div class="proj-num">02</div>
-        <div class="proj-title">E-commerce Test Suite</div>
+        <div class="proj-title" data-i18n="proj2.title">E-commerce Test Suite</div>
         <div class="proj-tech-line">Selenium · Java · TestNG · Allure</div>
-        <div class="proj-desc">Complete regression test suite for an e-commerce application. Covers critical paths: login, search, add to cart, checkout, payment.</div>
-        <div class="proj-features">
+        <div class="proj-desc" data-i18n="proj2.desc">Complete regression test suite for an e-commerce application. Covers critical paths: login, search, add to cart, checkout, payment.</div>
+        <div class="proj-features" data-i18n-html="proj1.features">
           <div class="pf"><span class="pf-dot green"></span>Login / Register flows</div>
           <div class="pf"><span class="pf-dot green"></span>Add to cart & checkout</div>
           <div class="pf"><span class="pf-dot green"></span>Payment scenarios</div>
           <div class="pf"><span class="pf-dot yellow"></span>Negative test cases</div>
         </div>
         <div class="proj-stats">
-          <div class="ps-item"><div class="ps-num green">18</div><div class="ps-lbl">Tests</div></div>
-          <div class="ps-item"><div class="ps-num blue">85%</div><div class="ps-lbl">Pass Rate</div></div>
-          <div class="ps-item"><div class="ps-num purple">5</div><div class="ps-lbl">Flows</div></div>
+          <div class="ps-item"><div class="ps-num green">18</div><div class="ps-lbl" data-i18n="proj2.stats.tests">Tests</div></div>
+          <div class="ps-item"><div class="ps-num blue">85%</div><div class="ps-lbl" data-i18n="proj2.stats.pass">Pass Rate</div></div>
+          <div class="ps-item"><div class="ps-num purple">5</div><div class="ps-lbl" data-i18n="proj2.stats.flows">Flows</div></div>
         </div>
         <div class="proj-actions" style="margin-top:20px">
           <a href="https://github.com/akremhammamii" target="_blank" rel="noopener" class="btn-g" style="font-size:13px;padding:10px 20px">GitHub →</a>
@@ -459,19 +459,19 @@
 
       <div class="proj-card rv">
         <div class="proj-num">03</div>
-        <div class="proj-title">Jenkins CI/CD Pipeline</div>
+        <div class="proj-title" data-i18n="proj3.title">Jenkins CI/CD Pipeline</div>
         <div class="proj-tech-line">Jenkins · GitHub Actions · Allure · Maven</div>
-        <div class="proj-desc">Automated CI/CD pipeline: Maven build, test execution, Allure report generation and notification on failure. Triggered on every push.</div>
-        <div class="proj-features">
+        <div class="proj-desc" data-i18n="proj3.desc">Automated CI/CD pipeline: Maven build, test execution, Allure report generation and notification on failure. Triggered on every push.</div>
+        <div class="proj-features" data-i18n-html="proj1.features">
           <div class="pf"><span class="pf-dot green"></span>Trigger on push / PR</div>
           <div class="pf"><span class="pf-dot green"></span>Allure report generation</div>
           <div class="pf"><span class="pf-dot green"></span>Build history & trends</div>
           <div class="pf"><span class="pf-dot yellow"></span>Fail notification</div>
         </div>
         <div class="proj-stats">
-          <div class="ps-item"><div class="ps-num green">Auto</div><div class="ps-lbl">Trigger</div></div>
-          <div class="ps-item"><div class="ps-num blue">HTML</div><div class="ps-lbl">Reports</div></div>
-          <div class="ps-item"><div class="ps-num purple">CI</div><div class="ps-lbl">Ready</div></div>
+          <div class="ps-item"><div class="ps-num green">Auto</div><div class="ps-lbl" data-i18n="proj3.stats.trigger">Trigger</div></div>
+          <div class="ps-item"><div class="ps-num blue">HTML</div><div class="ps-lbl" data-i18n="proj3.stats.reports">Reports</div></div>
+          <div class="ps-item"><div class="ps-num purple">CI</div><div class="ps-lbl" data-i18n="proj3.stats.ready">Ready</div></div>
         </div>
         <div class="proj-actions" style="margin-top:20px">
           <a href="https://github.com/akremhammamii" target="_blank" rel="noopener" class="btn-g" style="font-size:13px;padding:10px 20px">GitHub →</a>
@@ -485,14 +485,14 @@
 <!-- LIVE RUNNER -->
 <div class="fb runner-bg" id="runner">
   <div class="fi">
-    <div class="rey">// 03 — CI/CD Simulation</div>
-    <div class="rst">Live Test Execution</div>
-    <div class="rss">Run the tests and watch real-time execution — faithful to a real Maven pipeline.</div>
+    <div class="rey" data-i18n="runner.ey">// 03 — CI/CD Simulation</div>
+    <div class="rst" data-i18n="runner.st">Live Test Execution</div>
+    <div class="rss" data-i18n="runner.ss">Run the tests and watch real-time execution — faithful to a real Maven pipeline.</div>
     <div class="rl">
       <div>
         <div class="rctrl">
-          <button class="run-btn" id="runBtn">▶ Run Automation Suite</button>
-          <button class="rst-btn" id="rstBtn">↺ Reset</button>
+          <button class="run-btn" id="runBtn" data-i18n="runner.run">▶ Run Automation Suite</button>
+          <button class="rst-btn" id="rstBtn" data-i18n="runner.reset">↺ Reset</button>
         </div>
         <div class="term">
           <div class="tbar">
@@ -510,9 +510,9 @@
       </div>
       <div>
         <div class="rsums">
-          <div class="rsc"><div class="rsn tt" id="stt">0</div><div class="rsl">Total</div></div>
-          <div class="rsc"><div class="rsn ps" id="sps">0</div><div class="rsl">Passed</div></div>
-          <div class="rsc"><div class="rsn fl" id="sfl">0</div><div class="rsl">Failed</div></div>
+          <div class="rsc"><div class="rsn tt" id="stt">0</div><div class="rsl" data-i18n="runner.total">Total</div></div>
+          <div class="rsc"><div class="rsn ps" id="sps">0</div><div class="rsl" data-i18n="runner.passed">Passed</div></div>
+          <div class="rsc"><div class="rsn fl" id="sfl">0</div><div class="rsl" data-i18n="runner.failed">Failed</div></div>
         </div>
         <div class="tcards" id="tcards"></div>
       </div>
@@ -523,34 +523,34 @@
 <!-- ARCHITECTURE -->
 <div class="fb" id="arch">
   <div class="fi">
-    <div class="ey">// 04 — Automation Framework</div>
-    <div class="st">Technical architecture</div>
-    <div class="ss">Click on each layer to discover its role in the BDD framework.</div>
+    <div class="ey" data-i18n="arch.ey">// 04 — Automation Framework</div>
+    <div class="st" data-i18n="arch.st">Technical architecture</div>
+    <div class="ss" data-i18n="arch.ss">Click on each layer to discover its role in the BDD framework.</div>
     <div class="arch-grid rv">
       <div class="arch-steps" id="asteps">
         <div class="astep act" data-i="0">
           <div class="aleft"><div class="adot"></div><div class="aline"></div></div>
-          <div class="abody"><div class="alay">Layer 1</div><div class="aname">Feature Files (BDD)</div><div class="atag">Gherkin · Given / When / Then</div></div>
+          <div class="abody"><div class="alay" data-i18n="arch.layer1.label">Layer 1</div><div class="aname" data-i18n="arch.layer1.name">Feature Files (BDD)</div><div class="atag" data-i18n="arch.layer1.tag">Gherkin · Given / When / Then</div></div>
         </div>
         <div class="astep" data-i="1">
           <div class="aleft"><div class="adot"></div><div class="aline"></div></div>
-          <div class="abody"><div class="alay">Layer 2</div><div class="aname">Step Definitions</div><div class="atag">Java · Cucumber annotations</div></div>
+          <div class="abody"><div class="alay" data-i18n="arch.layer2.label">Layer 2</div><div class="aname" data-i18n="arch.layer2.name">Step Definitions</div><div class="atag" data-i18n="arch.layer2.tag">Java · Cucumber annotations</div></div>
         </div>
         <div class="astep" data-i="2">
           <div class="aleft"><div class="adot"></div><div class="aline"></div></div>
-          <div class="abody"><div class="alay">Layer 3</div><div class="aname">Page Object Model</div><div class="atag">By locators · driver.findElement()</div></div>
+          <div class="abody"><div class="alay" data-i18n="arch.layer3.label">Layer 3</div><div class="aname" data-i18n="arch.layer3.name">Page Object Model</div><div class="atag" data-i18n="arch.layer3.tag">By locators · driver.findElement()</div></div>
         </div>
         <div class="astep" data-i="3">
           <div class="aleft"><div class="adot"></div><div class="aline"></div></div>
-          <div class="abody"><div class="alay">Layer 4</div><div class="aname">Driver Factory</div><div class="atag">WebDriver · Thread-safe · Multi-browser</div></div>
+          <div class="abody"><div class="alay" data-i18n="arch.layer4.label">Layer 4</div><div class="aname" data-i18n="arch.layer4.name">Driver Factory</div><div class="atag" data-i18n="arch.layer4.tag">WebDriver · Thread-safe · Multi-browser</div></div>
         </div>
         <div class="astep" data-i="4">
           <div class="aleft"><div class="adot"></div><div class="aline"></div></div>
-          <div class="abody"><div class="alay">Layer 5</div><div class="aname">Test Data Manager</div><div class="atag">JSON / Properties · Environments</div></div>
+          <div class="abody"><div class="alay" data-i18n="arch.layer5.label">Layer 5</div><div class="aname" data-i18n="arch.layer5.name">Test Data Manager</div><div class="atag" data-i18n="arch.layer5.tag">JSON / Properties · Environments</div></div>
         </div>
         <div class="astep" data-i="5">
           <div class="aleft"><div class="adot"></div><div class="aline"></div></div>
-          <div class="abody"><div class="alay">Layer 6</div><div class="aname">Reporting — Allure</div><div class="atag">HTML reports · Screenshots · History</div></div>
+          <div class="abody"><div class="alay" data-i18n="arch.layer6.label">Layer 6</div><div class="aname" data-i18n="arch.layer6.name">Reporting — Allure</div><div class="atag" data-i18n="arch.layer6.tag">HTML reports · Screenshots · History</div></div>
         </div>
       </div>
       <div class="adet">
@@ -574,12 +574,12 @@
 <!-- BUG HUNTER -->
 <div class="fb bugs-bg" id="bugs">
   <div class="fi">
-    <div class="ey">// 05 — Bug Hunter</div>
-    <div class="st">Documented bugs</div>
-    <div class="ss">Found on public QA demo applications — professional format: steps to reproduce, expected vs actual, severity.</div>
+    <div class="ey" data-i18n="bugs.ey">// 05 — Bug Hunter</div>
+    <div class="st" data-i18n="bugs.st">Documented bugs</div>
+    <div class="ss" data-i18n="bugs.ss">Found on public QA demo applications — professional format: steps to reproduce, expected vs actual, severity.</div>
     <div class="bugs">
 
-      <div class="bug hi rv">
+      <div class="bug hi rv" data-i18n-html="bug1.html">
         <div class="bhead">
           <div class="btit">Negative quantity accepted at checkout</div>
           <span class="bsev">High</span>
@@ -608,7 +608,7 @@
         </div>
       </div>
 
-      <div class="bug cr rv">
+      <div class="bug cr rv" data-i18n-html="bug2.html">
         <div class="bhead">
           <div class="btit">Dashboard access without authentication</div>
           <span class="bsev">Critical</span>
@@ -637,7 +637,7 @@
         </div>
       </div>
 
-      <div class="bug me rv">
+      <div class="bug me rv" data-i18n-html="bug3.html">
         <div class="bhead">
           <div class="btit">Product sort by price — alphabetical instead of numeric</div>
           <span class="bsev">Medium</span>
@@ -665,7 +665,7 @@
         </div>
       </div>
 
-      <div class="bug hi rv">
+      <div class="bug hi rv" data-i18n-html="bug1.html">
         <div class="bhead">
           <div class="btit">Add to cart without session — false confirmation</div>
           <span class="bsev">High</span>
@@ -700,8 +700,8 @@
 
 <!-- SKILLS -->
 <section id="skills" class="sec">
-  <div class="ey">// 06 — Technical Stack</div>
-  <div class="st">What I master</div>
+  <div class="ey" data-i18n="skills.ey">// 06 — Technical Stack</div>
+  <div class="st" data-i18n="skills.st">What I master</div>
   <div class="chips rv">
     <div class="chip ft"><span class="cdot" style="background:#6d28d9"></span>Selenium WebDriver</div>
     <div class="chip ft"><span class="cdot" style="background:#7c3aed"></span>Cucumber BDD</div>
@@ -723,24 +723,24 @@
 
 <!-- EXPERIENCE -->
 <section id="xp" class="sec">
-  <div class="ey">// 07 — Career</div>
-  <div class="st">3 years at INETUM Tunisia</div>
+  <div class="ey" data-i18n="exp.ey">// 07 — Career</div>
+  <div class="st" data-i18n="exp.st">3 years at INETUM Tunisia</div>
   <div class="exps">
-    <div class="expc rv">
+    <div class="expc rv" data-i18n-html="exp1.html">
       <div class="epd">May 2024 — Present</div>
       <div class="eco">COMAR & HAYETT</div>
       <div class="edom">Insurance Sector</div>
       <div class="edesc">Selenium/Java automation (POM), Postman API tests with JSON schema validation and HTTP codes. MANTIS anomaly management.</div>
       <div class="etags"><span class="etag">Selenium</span><span class="etag">Java</span><span class="etag">POM</span><span class="etag">Postman</span><span class="etag">MANTIS</span></div>
     </div>
-    <div class="expc rv">
+    <div class="expc rv" data-i18n-html="exp1.html">
       <div class="epd">Oct 2023 — May 2024</div>
       <div class="eco">Cynoia</div>
       <div class="edom">SaaS Sector</div>
       <div class="edesc">BDD Selenium+Cucumber framework, GitHub Actions + Allure pipeline for fast developer feedback. Scrum ceremonies, JIRA management.</div>
       <div class="etags"><span class="etag">BDD</span><span class="etag">Cucumber</span><span class="etag">GitHub Actions</span><span class="etag">Allure</span></div>
     </div>
-    <div class="expc rv">
+    <div class="expc rv" data-i18n-html="exp1.html">
       <div class="epd">Sep 2022 — Sep 2023</div>
       <div class="eco">THYMSYS</div>
       <div class="edom">ERP Sector</div>
@@ -753,12 +753,12 @@
 <!-- CONTACT -->
 <section id="contact">
   <div class="cin">
-    <div class="ctit">Let's work together →</div>
-    <p class="csub">Available immediately for new QA opportunities.</p>
+    <div class="ctit" data-i18n="contact.title">Let's work together →</div>
+    <p class="csub" data-i18n="contact.sub">Available immediately for new QA opportunities.</p>
     <div class="clinks">
-      <a class="clink" href="mailto:akrem.hammami@example.com">
+      <a class="clink" href="mailto:hammami-akrem@outlook.com">
         <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,6 12,13 22,6"/></svg>
-        akrem.hammami@example.com
+        hammami-akrem@outlook.com
       </a>
       <a class="clink" href="https://github.com/akremhammamii" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
@@ -772,7 +772,7 @@
   </div>
 </section>
 
-<footer>© 2025 <span>Akrem Hammami</span> · QA Automation Engineer · Ariana, Tunisia</footer>
+<footer data-i18n="footer">© 2025 <span>Akrem Hammami</span> · QA Automation Engineer · Ariana, Tunisia</footer>
 
 <script>
   // BLOB
@@ -780,6 +780,160 @@
   let mx=innerWidth/2,my=innerHeight/2;
   document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
   (function a(){blob.style.left=mx+'px';blob.style.top=(my+scrollY)+'px';requestAnimationFrame(a);})();
+  let running=false;
+  let activeIndex=0;
+
+  // I18N
+  const I18N_FR = {
+    "nav.dashboard":"Tableau QA",
+    "nav.projects":"Projets",
+    "nav.runner":"Tests en direct",
+    "nav.arch":"Architecture",
+    "nav.bugs":"Chasseur de bugs",
+    "nav.exp":"Expérience",
+    "nav.contact":"Me contacter →",
+    "badge.available":"Disponible immédiatement · Ariana, Tunisie",
+    "hero.line1":"Je teste. Je casse.",
+    "hero.line2":"Je <span class=\"aw\">certifie</span> la qualité.",
+    "hero.sub":"<strong>Akrem Hammami</strong> — Ingénieur QA Automation avec 3 ans d'expérience en <strong>Selenium / Java / BDD</strong>. Certifié ISTQB. Secteurs : Assurance, SaaS, ERP.",
+    "hero.btn.dashboard":"Voir le tableau QA ↓",
+    "hero.btn.github":"GitHub →",
+    "stats.automated":"Tests automatisés",
+    "stats.passrate":"Taux de réussite",
+    "stats.bugs":"Bugs documentés",
+    "stats.cert":"Certification",
+    "section.dashboard.ey":"// 01 — Tableau qualité",
+    "section.dashboard.st":"Mes métriques QA",
+    "section.dashboard.ss":"Des chiffres qui parlent — comme un vrai rapport qualité.",
+    "metric.coverage":"Couverture d’automatisation",
+    "metric.tests":"Tests exécutés",
+    "metric.pass":"Taux de réussite",
+    "metric.bugs":"Bugs documentés",
+    "metric.trend.coverage":"<span class=\"tup\">↑ En amélioration</span> — cible 85%",
+    "metric.trend.tests":"<span class=\"tup\">↑ Croissance</span> continue",
+    "metric.trend.pass":"<span class=\"tup\">↑ Stable</span> — cible 80%",
+    "metric.trend.bugs":"<span class=\"tdn\">✓ Tous</span> documentés avec étapes",
+    "dash.trend.title":"Tendance — Tests exécutés / mois",
+    "dash.trend.months":"<span>Oct</span><span>Nov</span><span>Déc</span><span>Jan</span><span>Fév</span><span>Mar</span>",
+    "dash.bugdist.title":"Répartition des bugs par sévérité",
+    "dash.bugdist.legend":"<div class=\"dli\"><div class=\"ddot\" style=\"background:#dc2626\"></div><div><strong>Critique (20%)</strong> — 3</div></div><div class=\"dli\"><div class=\"ddot\" style=\"background:#f97316\"></div><div><strong>Élevé (30%)</strong> — 4</div></div><div class=\"dli\"><div class=\"ddot\" style=\"background:#eab308\"></div><div><strong>Moyen (33%)</strong> — 5</div></div><div class=\"dli\"><div class=\"ddot\" style=\"background:#22c55e\"></div><div><strong>Faible (20%)</strong> — 3</div></div>",
+    "section.projects.ey":"// 02 — Projets d’automatisation",
+    "section.projects.st":"Frameworks réalisés",
+    "section.projects.ss":"Projets d’automatisation réels — architecture complète, tests exécutables, rapports CI/CD.",
+    "proj1.title":"Framework Selenium Cucumber BDD",
+    "proj1.desc":"Framework d’automatisation complet basé sur le Page Object Model. Scénarios BDD en Gherkin, exécution parallèle, gestion des données JSON, rapports Allure intégrés au pipeline CI/CD.",
+    "proj1.features":"<div class=\"pf\"><span class=\"pf-dot green\"></span>Page Object Model — locators By</div><div class=\"pf\"><span class=\"pf-dot green\"></span>Cucumber BDD — fichiers feature Gherkin</div><div class=\"pf\"><span class=\"pf-dot green\"></span>Driver Factory — thread-safe, multi‑navigateurs</div><div class=\"pf\"><span class=\"pf-dot green\"></span>Allure Reports — captures en échec</div><div class=\"pf\"><span class=\"pf-dot green\"></span>GitHub Actions — pipeline CI/CD</div><div class=\"pf\"><span class=\"pf-dot yellow\"></span>Exécution parallèle — TestNG</div>",
+    "proj1.action":"Voir sur GitHub →",
+    "proj1.badge":"Open Source",
+    "proj2.title":"Suite de tests e‑commerce",
+    "proj2.desc":"Suite de tests de régression complète pour une application e‑commerce. Couvre les parcours critiques : login, recherche, ajout au panier, checkout, paiement.",
+    "proj2.features":"<div class=\"pf\"><span class=\"pf-dot green\"></span>Login / Inscription</div><div class=\"pf\"><span class=\"pf-dot green\"></span>Ajout au panier & checkout</div><div class=\"pf\"><span class=\"pf-dot green\"></span>Scénarios de paiement</div><div class=\"pf\"><span class=\"pf-dot yellow\"></span>Cas négatifs</div>",
+    "proj2.stats.tests":"Tests",
+    "proj2.stats.pass":"Taux de réussite",
+    "proj2.stats.flows":"Parcours",
+    "proj3.title":"Pipeline CI/CD Jenkins",
+    "proj3.desc":"Pipeline CI/CD automatisé : build Maven, exécution des tests, génération du rapport Allure et notification en cas d’échec. Déclenché à chaque push.",
+    "proj3.features":"<div class=\"pf\"><span class=\"pf-dot green\"></span>Déclenchement sur push / PR</div><div class=\"pf\"><span class=\"pf-dot green\"></span>Génération du rapport Allure</div><div class=\"pf\"><span class=\"pf-dot green\"></span>Historique & tendances</div><div class=\"pf\"><span class=\"pf-dot yellow\"></span>Notification d’échec</div>",
+    "proj3.stats.trigger":"Déclenchement",
+    "proj3.stats.reports":"Rapports",
+    "proj3.stats.ready":"Prêt",
+    "runner.ey":"// 03 — Simulation CI/CD",
+    "runner.st":"Exécution des tests en direct",
+    "runner.ss":"Lance les tests et observe l’exécution en temps réel — fidèle à un pipeline Maven réel.",
+    "runner.run":"▶ Lancer la suite d’automatisation",
+    "runner.reset":"↺ Réinitialiser",
+    "runner.total":"Total",
+    "runner.passed":"Réussis",
+    "runner.failed":"Échoués",
+    "arch.ey":"// 04 — Framework d’automatisation",
+    "arch.st":"Architecture technique",
+    "arch.ss":"Clique sur chaque couche pour découvrir son rôle dans le framework BDD.",
+    "arch.layer1.label":"Couche 1",
+    "arch.layer2.label":"Couche 2",
+    "arch.layer3.label":"Couche 3",
+    "arch.layer4.label":"Couche 4",
+    "arch.layer5.label":"Couche 5",
+    "arch.layer6.label":"Couche 6",
+    "arch.layer1.name":"Fichiers feature (BDD)",
+    "arch.layer2.name":"Définitions des steps",
+    "arch.layer3.name":"Page Object Model",
+    "arch.layer4.name":"Driver Factory",
+    "arch.layer5.name":"Gestionnaire de données de test",
+    "arch.layer6.name":"Reporting — Allure",
+    "arch.layer1.tag":"Gherkin · Given / When / Then",
+    "arch.layer2.tag":"Java · Annotations Cucumber",
+    "arch.layer3.tag":"Locators By · driver.findElement()",
+    "arch.layer4.tag":"WebDriver · Thread-safe · Multi‑navigateurs",
+    "arch.layer5.tag":"JSON / Properties · Environnements",
+    "arch.layer6.tag":"Rapports HTML · Captures · Historique",
+    "bugs.ey":"// 05 — Chasseur de bugs",
+    "bugs.st":"Bugs documentés",
+    "bugs.ss":"Trouvés sur des applications QA publiques — format pro : étapes, attendu vs actuel, sévérité.",
+    "bug1.html":"<div class=\"bhead\"><div class=\"btit\">Quantité négative acceptée au checkout</div><span class=\"bsev\">Élevé</span></div><div class=\"bmeta\"><span class=\"bmi\">🔧 <strong>Appli :</strong> OpenCart Demo</span><span class=\"bmi\">📁 <strong>Type :</strong> Fonctionnel</span></div><div class=\"bdesc\">Le champ quantité du panier accepte des valeurs négatives. Le total affiché devient négatif et la commande passe sans validation côté serveur.</div><div class=\"bsteps\"><div class=\"bstit\">Étapes pour reproduire</div><ol><li>Ajouter un produit au panier</li><li>Mettre la quantité à <code>-1</code></li><li>Cliquer \"Update\" — total négatif</li><li>Passer au checkout — commande acceptée</li></ol></div><div class=\"beva\"><span class=\"ex\">Attendu :</span> message \"quantité invalide\"<br><span class=\"ac\">Actuel :</span> total négatif, commande validée</div><div class=\"bfoot\"><span class=\"bbadge\">Validation · Logique métier</span><span class=\"bapp\">opencart-demo.com</span></div>",
+    "bug2.html":"<div class=\"bhead\"><div class=\"btit\">Accès au dashboard sans authentification</div><span class=\"bsev\">Critique</span></div><div class=\"bmeta\"><span class=\"bmi\">🔧 <strong>Appli :</strong> SauceDemo</span><span class=\"bmi\">📁 <strong>Type :</strong> Sécurité</span></div><div class=\"bdesc\">Accéder directement à <code>/inventory.html</code> sans session charge la page produits sans redirection vers le login.</div><div class=\"bsteps\"><div class=\"bstit\">Étapes pour reproduire</div><ol><li>Ouvrir un navigateur sans session</li><li>Aller sur <code>/inventory.html</code></li><li>Observer — page chargée sans login</li><li>Données produits visibles</li></ol></div><div class=\"beva\"><span class=\"ex\">Attendu :</span> redirection vers <code>/login</code><br><span class=\"ac\">Actuel :</span> accès partiel au contenu protégé</div><div class=\"bfoot\"><span class=\"bbadge\">Sécurité · Autorisation</span><span class=\"bapp\">saucedemo.com</span></div>",
+    "bug3.html":"<div class=\"bhead\"><div class=\"btit\">Tri des produits par prix — alphabétique au lieu de numérique</div><span class=\"bsev\">Moyen</span></div><div class=\"bmeta\"><span class=\"bmi\">🔧 <strong>Appli :</strong> SauceDemo</span><span class=\"bmi\">📁 <strong>Type :</strong> Fonctionnel</span></div><div class=\"bdesc\">Le tri \"Price low to high\" compare les prix comme des chaînes. Résultat : $10 apparaît avant $7.</div><div class=\"bsteps\"><div class=\"bstit\">Étapes pour reproduire</div><ol><li>Se connecter</li><li>Choisir \"Price (low to high)\"</li><li>Observer l’ordre des produits</li></ol></div><div class=\"beva\"><span class=\"ex\">Attendu :</span> $7.99 → $9.99 → $15.99 → $29.99<br><span class=\"ac\">Actuel :</span> ordre alphabétique — $15.99 avant $7.99</div><div class=\"bfoot\"><span class=\"bbadge\">Fonctionnel · Tri</span><span class=\"bapp\">saucedemo.com</span></div>",
+    "bug4.html":"<div class=\"bhead\"><div class=\"btit\">Ajout au panier sans session — fausse confirmation</div><span class=\"bsev\">Élevé</span></div><div class=\"bmeta\"><span class=\"bmi\">🔧 <strong>Appli :</strong> Demoblaze</span><span class=\"bmi\">📁 <strong>Type :</strong> UX / Fonctionnel</span></div><div class=\"bdesc\">Un utilisateur non authentifié reçoit \"Product added\", mais l’article n’est pas enregistré. Aucun message de login.</div><div class=\"bsteps\"><div class=\"bstit\">Étapes pour reproduire</div><ol><li>Accéder à Demoblaze sans login</li><li>Cliquer sur un produit puis \"Add to cart\"</li><li>Alerte \"Product added\"</li><li>Se connecter et vérifier le panier — vide</li></ol></div><div class=\"beva\"><span class=\"ex\">Attendu :</span> redirection login ou message clair<br><span class=\"ac\">Actuel :</span> confirmation trompeuse, données perdues</div><div class=\"bfoot\"><span class=\"bbadge\">UX · Gestion d’état</span><span class=\"bapp\">demoblaze.com</span></div>",
+    "skills.ey":"// 06 — Stack technique",
+    "skills.st":"Ce que je maîtrise",
+    "exp.ey":"// 07 — Parcours",
+    "exp.st":"3 ans chez INETUM Tunisie",
+    "exp1.html":"<div class=\"epd\">Mai 2024 — Présent</div><div class=\"eco\">COMAR & HAYETT</div><div class=\"edom\">Secteur Assurance</div><div class=\"edesc\">Automatisation Selenium/Java (POM), tests API Postman avec validation JSON schema et codes HTTP. Gestion des anomalies MANTIS.</div><div class=\"etags\"><span class=\"etag\">Selenium</span><span class=\"etag\">Java</span><span class=\"etag\">POM</span><span class=\"etag\">Postman</span><span class=\"etag\">MANTIS</span></div>",
+    "exp2.html":"<div class=\"epd\">Oct 2023 — Mai 2024</div><div class=\"eco\">Cynoia</div><div class=\"edom\">Secteur SaaS</div><div class=\"edesc\">Framework BDD Selenium+Cucumber, pipeline GitHub Actions + Allure pour un feedback rapide. Cérémonies Scrum, gestion JIRA.</div><div class=\"etags\"><span class=\"etag\">BDD</span><span class=\"etag\">Cucumber</span><span class=\"etag\">GitHub Actions</span><span class=\"etag\">Allure</span></div>",
+    "exp3.html":"<div class=\"epd\">Sep 2022 — Sep 2023</div><div class=\"eco\">THYMSYS</div><div class=\"edom\">Secteur ERP</div><div class=\"edesc\">Conception de tests sur TestQuality, campagnes de régression et smoke tests. Suivi JIRA, validation des corrections et stabilité en production.</div><div class=\"etags\"><span class=\"etag\">TestQuality</span><span class=\"etag\">JIRA</span><span class=\"etag\">Regression</span><span class=\"etag\">Smoke Tests</span></div>",
+    "contact.title":"Travaillons ensemble →",
+    "contact.sub":"Disponible immédiatement pour de nouvelles opportunités QA.",
+    "footer":"© 2025 <span>Akrem Hammami</span> · Ingénieur QA Automation · Ariana, Tunisie",
+    "runner.log.start":"Appuie sur Lancer pour démarrer...",
+    "runner.log.browser":"Navigateur : Chrome · Headless : non",
+    "runner.log.pass":"RÉUSSI",
+    "runner.log.fail":"ÉCHOUÉ",
+    "runner.log.testsRun":"Tests exécutés",
+    "runner.log.failures":"Échecs",
+    "runner.log.skipped":"Ignorés",
+    "runner.log.buildFailure":"ÉCHEC DU BUILD",
+    "runner.log.buildSuccess":"SUCCÈS DU BUILD",
+    "runner.log.totalTime":"Temps total"
+  };
+
+  const i18nNodes = document.querySelectorAll('[data-i18n],[data-i18n-html]');
+  i18nNodes.forEach(el=>{
+    if (!el.dataset.en) {
+      el.dataset.en = el.dataset.i18nHtml ? el.innerHTML : el.textContent;
+    }
+  });
+
+  let currentLang = localStorage.getItem('lang') || 'en';
+  function t(key, fallback){
+    if(currentLang === 'fr' && I18N_FR[key]) return I18N_FR[key];
+    return fallback;
+  }
+  function applyLang(lang){
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    i18nNodes.forEach(el=>{
+      const key = el.dataset.i18n || el.dataset.i18nHtml;
+      if (lang === 'fr' && I18N_FR[key]) {
+        if (el.dataset.i18nHtml) el.innerHTML = I18N_FR[key];
+        else el.textContent = I18N_FR[key];
+      } else {
+        if (el.dataset.i18nHtml) el.innerHTML = el.dataset.en;
+        else el.textContent = el.dataset.en;
+      }
+    });
+    if (!running) resetRunner();
+    if (typeof setArch === 'function') setArch(activeIndex);
+    const langToggle = document.getElementById('langToggle');
+    if (langToggle) langToggle.textContent = (lang === 'en') ? 'FR' : 'EN';
+    localStorage.setItem('lang', lang);
+  }
+
+  const langToggle = document.getElementById('langToggle');
+  if (langToggle) {
+    langToggle.addEventListener('click',()=>{
+      applyLang(currentLang === 'en' ? 'fr' : 'en');
+    });
+  }
+  applyLang(currentLang);
 
   // SCROLL REVEAL
   const ro=new IntersectionObserver(entries=>{
@@ -824,20 +978,36 @@
   }
 
   // ARCHITECTURE DATA
-  const ad=[
-    {l:'Layer 1',t:'Feature Files (BDD)',d:'.feature files describe expected behavior in Gherkin. They form the contract between business and technical teams.',
-     c:`<div><span class="cc"># login.feature</span></div><div><span class="ck">Feature:</span> <span class="cd">User Authentication</span></div><div>&nbsp;</div><div>&nbsp;&nbsp;<span class="ck">Scenario:</span> <span class="cd">Successful login</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ca">Given</span> <span class="cs">"the user is on the login page"</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ca">When</span> &nbsp;<span class="cs">"they enter valid credentials"</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ca">Then</span> &nbsp;<span class="cs">"they should see the dashboard"</span></div>`},
-    {l:'Layer 2',t:'Step Definitions',d:'Step Definitions link Gherkin scenarios to Java code. Each step annotated with @Given, @When or @Then calls the Page Object layer.',
-     c:`<div><span class="ca">@When</span>(<span class="cs">"they enter valid credentials"</span>)</div><div><span class="ck">public void</span> <span class="cf">enterCredentials</span>() {</div><div>&nbsp;&nbsp;loginPage.<span class="cf">enterEmail</span>(<span class="cs">"user@test.com"</span>);</div><div>&nbsp;&nbsp;loginPage.<span class="cf">enterPassword</span>(<span class="cs">"pass123"</span>);</div><div>&nbsp;&nbsp;loginPage.<span class="cf">clickSubmit</span>();</div><div>}</div>`},
-    {l:'Layer 3',t:'Page Object Model',d:'Each page is encapsulated in a dedicated Java class. By locators and actions are isolated — maintainable and reusable tests.',
-     c:`<div><span class="ck">public class</span> <span class="ccl">LoginPage</span> {</div><div>&nbsp;&nbsp;<span class="ck">private</span> WebDriver driver;</div><div>&nbsp;&nbsp;<span class="ck">private</span> By emailField = By.<span class="cf">id</span>(<span class="cs">"email"</span>);</div><div>&nbsp;&nbsp;<span class="ck">private</span> By submitBtn  = By.<span class="cf">cssSelector</span>(<span class="cs">"button[type='submit']"</span>);</div><div>&nbsp;&nbsp;<span class="ck">public void</span> <span class="cf">enterEmail</span>(String email) {</div><div>&nbsp;&nbsp;&nbsp;&nbsp;driver.<span class="cf">findElement</span>(emailField).<span class="cf">sendKeys</span>(email);</div><div>&nbsp;&nbsp;}</div><div>}</div>`},
-    {l:'Layer 4',t:'Driver Factory',d:'DriverFactory manages WebDriver instances in a thread-safe way for parallel execution on Chrome, Firefox and Edge.',
-     c:`<div><span class="ck">public class</span> <span class="ccl">DriverFactory</span> {</div><div>&nbsp;&nbsp;<span class="ck">private static</span> ThreadLocal&lt;WebDriver&gt; driver</div><div>&nbsp;&nbsp;&nbsp;&nbsp;= <span class="ck">new</span> ThreadLocal&lt;&gt;();</div><div>&nbsp;&nbsp;<span class="ck">public static</span> WebDriver <span class="cf">getDriver</span>() {</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">if</span>(driver.<span class="cf">get</span>() == <span class="ck">null</span>)</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;driver.<span class="cf">set</span>(<span class="ck">new</span> ChromeDriver());</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">return</span> driver.<span class="cf">get</span>();</div><div>&nbsp;&nbsp;}</div><div>}</div>`},
-    {l:'Layer 5',t:'Test Data Manager',d:'Loads test data from JSON or Properties according to target environment (staging, qa, production).',
-     c:`<div><span class="ck">public class</span> <span class="ccl">TestDataManager</span> {</div><div>&nbsp;&nbsp;<span class="ck">public static</span> String <span class="cf">get</span>(String key) {</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">return</span> props.<span class="cf">getProperty</span>(</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.<span class="cf">getenv</span>(<span class="cs">"ENV"</span>) + <span class="cs">"."</span> + key);</div><div>&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;<span class="cc">// env=staging → staging.baseUrl</span></div><div>}</div>`},
-    {l:'Layer 6',t:'Reporting — Allure',d:'Allure generates detailed HTML reports: screenshots on failure, trend history, CI/CD integration.',
-     c:`<div><span class="ca">@Step</span>(<span class="cs">"Login with {email}"</span>)</div><div><span class="ck">public void</span> <span class="cf">login</span>(String email) {</div><div>&nbsp;&nbsp;<span class="cc">// Allure traces each step</span></div><div>&nbsp;&nbsp;<span class="cc">// with auto screenshot</span></div><div>&nbsp;&nbsp;loginPage.<span class="cf">enterEmail</span>(email);</div><div>}</div><div><span class="cc">// → mvn allure:serve</span></div>`}
-  ];
+  const adData={
+    en:[
+      {l:'Layer 1',t:'Feature Files (BDD)',d:'.feature files describe expected behavior in Gherkin. They form the contract between business and technical teams.',
+       c:`<div><span class="cc"># login.feature</span></div><div><span class="ck">Feature:</span> <span class="cd">User Authentication</span></div><div>&nbsp;</div><div>&nbsp;&nbsp;<span class="ck">Scenario:</span> <span class="cd">Successful login</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ca">Given</span> <span class="cs">"the user is on the login page"</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ca">When</span> &nbsp;<span class="cs">"they enter valid credentials"</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ca">Then</span> &nbsp;<span class="cs">"they should see the dashboard"</span></div>`},
+      {l:'Layer 2',t:'Step Definitions',d:'Step Definitions link Gherkin scenarios to Java code. Each step annotated with @Given, @When or @Then calls the Page Object layer.',
+       c:`<div><span class="ca">@When</span>(<span class="cs">"they enter valid credentials"</span>)</div><div><span class="ck">public void</span> <span class="cf">enterCredentials</span>() {</div><div>&nbsp;&nbsp;loginPage.<span class="cf">enterEmail</span>(<span class="cs">"user@test.com"</span>);</div><div>&nbsp;&nbsp;loginPage.<span class="cf">enterPassword</span>(<span class="cs">"pass123"</span>);</div><div>&nbsp;&nbsp;loginPage.<span class="cf">clickSubmit</span>();</div><div>}</div>`},
+      {l:'Layer 3',t:'Page Object Model',d:'Each page is encapsulated in a dedicated Java class. By locators and actions are isolated — maintainable and reusable tests.',
+       c:`<div><span class="ck">public class</span> <span class="ccl">LoginPage</span> {</div><div>&nbsp;&nbsp;<span class="ck">private</span> WebDriver driver;</div><div>&nbsp;&nbsp;<span class="ck">private</span> By emailField = By.<span class="cf">id</span>(<span class="cs">"email"</span>);</div><div>&nbsp;&nbsp;<span class="ck">private</span> By submitBtn  = By.<span class="cf">cssSelector</span>(<span class="cs">"button[type='submit']"</span>);</div><div>&nbsp;&nbsp;<span class="ck">public void</span> <span class="cf">enterEmail</span>(String email) {</div><div>&nbsp;&nbsp;&nbsp;&nbsp;driver.<span class="cf">findElement</span>(emailField).<span class="cf">sendKeys</span>(email);</div><div>&nbsp;&nbsp;}</div><div>}</div>`},
+      {l:'Layer 4',t:'Driver Factory',d:'DriverFactory manages WebDriver instances in a thread-safe way for parallel execution on Chrome, Firefox and Edge.',
+       c:`<div><span class="ck">public class</span> <span class="ccl">DriverFactory</span> {</div><div>&nbsp;&nbsp;<span class="ck">private static</span> ThreadLocal&lt;WebDriver&gt; driver</div><div>&nbsp;&nbsp;&nbsp;&nbsp;= <span class="ck">new</span> ThreadLocal&lt;&gt;();</div><div>&nbsp;&nbsp;<span class="ck">public static</span> WebDriver <span class="cf">getDriver</span>() {</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">if</span>(driver.<span class="cf">get</span>() == <span class="ck">null</span>)</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;driver.<span class="cf">set</span>(<span class="ck">new</span> ChromeDriver());</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">return</span> driver.<span class="cf">get</span>();</div><div>&nbsp;&nbsp;}</div><div>}</div>`},
+      {l:'Layer 5',t:'Test Data Manager',d:'Loads test data from JSON or Properties according to target environment (staging, qa, production).',
+       c:`<div><span class="ck">public class</span> <span class="ccl">TestDataManager</span> {</div><div>&nbsp;&nbsp;<span class="ck">public static</span> String <span class="cf">get</span>(String key) {</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">return</span> props.<span class="cf">getProperty</span>(</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.<span class="cf">getenv</span>(<span class="cs">"ENV"</span>) + <span class="cs">"."</span> + key);</div><div>&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;<span class="cc">// env=staging → staging.baseUrl</span></div><div>}</div>`},
+      {l:'Layer 6',t:'Reporting — Allure',d:'Allure generates detailed HTML reports: screenshots on failure, trend history, CI/CD integration.',
+       c:`<div><span class="ca">@Step</span>(<span class="cs">"Login with {email}"</span>)</div><div><span class="ck">public void</span> <span class="cf">login</span>(String email) {</div><div>&nbsp;&nbsp;<span class="cc">// Allure traces each step</span></div><div>&nbsp;&nbsp;<span class="cc">// with auto screenshot</span></div><div>&nbsp;&nbsp;loginPage.<span class="cf">enterEmail</span>(email);</div><div>}</div><div><span class="cc">// → mvn allure:serve</span></div>`}
+    ],
+    fr:[
+      {l:'Couche 1',t:'Fichiers feature (BDD)',d:'Les fichiers .feature décrivent le comportement attendu en Gherkin. Ils constituent le contrat entre les équipes métier et techniques.',
+       c:`<div><span class="cc"># login.feature</span></div><div><span class="ck">Feature:</span> <span class="cd">User Authentication</span></div><div>&nbsp;</div><div>&nbsp;&nbsp;<span class="ck">Scenario:</span> <span class="cd">Successful login</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ca">Given</span> <span class="cs">"the user is on the login page"</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ca">When</span> &nbsp;<span class="cs">"they enter valid credentials"</span></div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ca">Then</span> &nbsp;<span class="cs">"they should see the dashboard"</span></div>`},
+      {l:'Couche 2',t:'Définitions des steps',d:'Les Step Definitions relient les scénarios Gherkin au code Java. Chaque étape annotée avec @Given, @When ou @Then appelle la couche Page Object.',
+       c:`<div><span class="ca">@When</span>(<span class="cs">"they enter valid credentials"</span>)</div><div><span class="ck">public void</span> <span class="cf">enterCredentials</span>() {</div><div>&nbsp;&nbsp;loginPage.<span class="cf">enterEmail</span>(<span class="cs">"user@test.com"</span>);</div><div>&nbsp;&nbsp;loginPage.<span class="cf">enterPassword</span>(<span class="cs">"pass123"</span>);</div><div>&nbsp;&nbsp;loginPage.<span class="cf">clickSubmit</span>();</div><div>}</div>`},
+      {l:'Couche 3',t:'Page Object Model',d:'Chaque page est encapsulée dans une classe Java dédiée. Les locators By et les actions sont isolés — tests maintenables et réutilisables.',
+       c:`<div><span class="ck">public class</span> <span class="ccl">LoginPage</span> {</div><div>&nbsp;&nbsp;<span class="ck">private</span> WebDriver driver;</div><div>&nbsp;&nbsp;<span class="ck">private</span> By emailField = By.<span class="cf">id</span>(<span class="cs">"email"</span>);</div><div>&nbsp;&nbsp;<span class="ck">private</span> By submitBtn  = By.<span class="cf">cssSelector</span>(<span class="cs">"button[type='submit']"</span>);</div><div>&nbsp;&nbsp;<span class="ck">public void</span> <span class="cf">enterEmail</span>(String email) {</div><div>&nbsp;&nbsp;&nbsp;&nbsp;driver.<span class="cf">findElement</span>(emailField).<span class="cf">sendKeys</span>(email);</div><div>&nbsp;&nbsp;}</div><div>}</div>`},
+      {l:'Couche 4',t:'Driver Factory',d:'DriverFactory gère les instances WebDriver de manière thread-safe pour l’exécution parallèle sur Chrome, Firefox et Edge.',
+       c:`<div><span class="ck">public class</span> <span class="ccl">DriverFactory</span> {</div><div>&nbsp;&nbsp;<span class="ck">private static</span> ThreadLocal&lt;WebDriver&gt; driver</div><div>&nbsp;&nbsp;&nbsp;&nbsp;= <span class="ck">new</span> ThreadLocal&lt;&gt;();</div><div>&nbsp;&nbsp;<span class="ck">public static</span> WebDriver <span class="cf">getDriver</span>() {</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">if</span>(driver.<span class="cf">get</span>() == <span class="ck">null</span>)</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;driver.<span class="cf">set</span>(<span class="ck">new</span> ChromeDriver());</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">return</span> driver.<span class="cf">get</span>();</div><div>&nbsp;&nbsp;}</div><div>}</div>`},
+      {l:'Couche 5',t:'Gestionnaire de données de test',d:'Charge les données de test depuis JSON ou Properties selon l’environnement cible (staging, qa, production).',
+       c:`<div><span class="ck">public class</span> <span class="ccl">TestDataManager</span> {</div><div>&nbsp;&nbsp;<span class="ck">public static</span> String <span class="cf">get</span>(String key) {</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">return</span> props.<span class="cf">getProperty</span>(</div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.<span class="cf">getenv</span>(<span class="cs">"ENV"</span>) + <span class="cs">"."</span> + key);</div><div>&nbsp;&nbsp;}</div><div>&nbsp;&nbsp;<span class="cc">// env=staging → staging.baseUrl</span></div><div>}</div>`},
+      {l:'Couche 6',t:'Reporting — Allure',d:'Allure génère des rapports HTML détaillés : captures d’écran en cas d’échec, historique des tendances, intégration CI/CD.',
+       c:`<div><span class="ca">@Step</span>(<span class="cs">"Login with {email}"</span>)</div><div><span class="ck">public void</span> <span class="cf">login</span>(String email) {</div><div>&nbsp;&nbsp;<span class="cc">// Allure traces each step</span></div><div>&nbsp;&nbsp;<span class="cc">// with auto screenshot</span></div><div>&nbsp;&nbsp;loginPage.<span class="cf">enterEmail</span>(email);</div><div>}</div><div><span class="cc">// → mvn allure:serve</span></div>`}
+    ]
+  };
 
   const steps=document.querySelectorAll('.astep');
   const adl=document.getElementById('adl');
@@ -846,9 +1016,10 @@
   const acode=document.getElementById('acode');
 
   function setArch(idx){
+    activeIndex = idx;
     steps.forEach(s=>s.classList.remove('act'));
     steps[idx].classList.add('act');
-    const d=ad[idx];
+    const d=adData[currentLang][idx];
     adl.textContent=d.l;
     adt.textContent=d.t;
     add.textContent=d.d;
@@ -878,7 +1049,7 @@
     {n:'APILoginTest',     s:'API Suite',   ok:true,  dur:450},
     {n:'APICheckoutTest',  s:'API Suite',   ok:true,  dur:550},
   ];
-  let running=false,timers=[];
+  let timers=[];
 
   function log(html,delay){
     const t=setTimeout(()=>{
@@ -923,7 +1094,7 @@
     log(`<span class="tp">$</span> <span class="td2">mvn clean test -Dsuite=all -Denv=staging</span>`,delay);
     delay+=300;
     log(`<span class="ti">[INFO] Selenium 4.18 · Cucumber 7.14 · Java 17</span>`,delay);delay+=200;
-    log(`<span class="ti">[INFO] Browser: Chrome · Headless: false</span>`,delay);delay+=200;
+    log(`<span class="ti">[INFO] ${t('runner.log.browser','Browser: Chrome · Headless: false')}</span>`,delay);delay+=200;
     log(`<span class="td2">──────────────────────────────────────</span>`,delay);delay+=100;
 
     TESTS.forEach(t=>{
@@ -937,9 +1108,9 @@
         addCard(t,t.ok);
       },d2));
       if(t.ok){
-        log(`<span class="tps">&nbsp;&nbsp;✓ PASSED</span><span class="td2"> (${t.dur}ms)</span>`,delay);
+        log(`<span class="tps">&nbsp;&nbsp;✓ ${t('runner.log.pass','PASSED')}</span><span class="td2"> (${t.dur}ms)</span>`,delay);
       } else {
-        log(`<span class="tf">&nbsp;&nbsp;✗ FAILED</span><span class="td2"> — AssertionError: expected 200 got 422</span>`,delay);
+        log(`<span class="tf">&nbsp;&nbsp;✗ ${t('runner.log.fail','FAILED')}</span><span class="td2"> — AssertionError: expected 200 got 422</span>`,delay);
         delay+=40;
         log(`<span class="tw">&nbsp;&nbsp;&nbsp;&nbsp;at PaymentPage.confirmPayment(PaymentPage.java:58)</span>`,delay);
       }
@@ -953,9 +1124,9 @@
     timers.push(setTimeout(()=>{
       const b=document.getElementById('tbody');
       const pn=TESTS.filter(t=>t.ok).length,fn=TESTS.filter(t=>!t.ok).length;
-      ['<span class="ti">[INFO] Tests run: '+TESTS.length+', Failures: '+fn+', Skipped: 0</span>',
-       fn>0?'<span class="tf">[ERROR] BUILD FAILURE — '+fn+' test(s) failed</span>':'<span class="tps">[INFO] BUILD SUCCESS</span>',
-       '<span class="td2">[INFO] Total time: '+(TESTS.reduce((a,t)=>a+t.dur,0)/1000).toFixed(1)+'s</span>'
+      ['<span class="ti">[INFO] '+t('runner.log.testsRun','Tests run')+': '+TESTS.length+', '+t('runner.log.failures','Failures')+': '+fn+', '+t('runner.log.skipped','Skipped')+': 0</span>',
+       fn>0?'<span class="tf">[ERROR] '+t('runner.log.buildFailure','BUILD FAILURE')+' — '+fn+' test(s) failed</span>':'<span class="tps">[INFO] '+t('runner.log.buildSuccess','BUILD SUCCESS')+'</span>',
+       '<span class="td2">[INFO] '+t('runner.log.totalTime','Total time')+': '+(TESTS.reduce((a,t)=>a+t.dur,0)/1000).toFixed(1)+'s</span>'
       ].forEach(h=>{const d=document.createElement('div');d.innerHTML=h;b.appendChild(d);});
       b.scrollTop=b.scrollHeight;
       running=false;
@@ -967,7 +1138,7 @@
   function resetRunner(){
     timers.forEach(clearTimeout);timers=[];running=false;
     document.getElementById('runBtn').disabled=false;
-    document.getElementById('tbody').innerHTML=`<div><span class="tp">$</span> <span class="td2">mvn clean test -Denv=staging</span></div><div><span class="td2">── QA Framework — Selenium + Cucumber + Java ──</span></div><div>&nbsp;</div><div><span class="td2">Press Run to start...</span> <span class="tcur"></span></div>`;
+    document.getElementById('tbody').innerHTML=`<div><span class="tp">$</span> <span class="td2">mvn clean test -Denv=staging</span></div><div><span class="td2">── QA Framework — Selenium + Cucumber + Java ──</span></div><div>&nbsp;</div><div><span class="td2">${t('runner.log.start','Press Run to start...')}</span> <span class="tcur"></span></div>`;
     document.getElementById('tcards').innerHTML='';
     document.getElementById('rpfill').style.width='0';
     updStats(0,0,0);
@@ -979,3 +1150,7 @@
 
 </body>
 </html>
+
+
+
+
