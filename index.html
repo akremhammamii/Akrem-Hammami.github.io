@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Akrem Hammami — Software QA Engineer & Test Automation Specialist. Portfolio professionnel." />
+  <title>Akrem Hammami | QA Engineer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">AH<span class="dot">.</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link">À propos</a></li>
+        <li><a href="#skills" class="nav-link">Compétences</a></li>
+        <li><a href="#experience" class="nav-link">Expérience</a></li>
+        <li><a href="#projects" class="nav-link">Projets</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="grid-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span class="badge-dot"></span>
+        Disponible immédiatement
+      </div>
+      <h1 class="hero-name reveal">
+        Akrem<br /><span class="gradient-text">Hammami</span>
+      </h1>
+      <div class="hero-title reveal">
+        <span class="typing-text" id="typing-text"></span><span class="cursor">|</span>
+      </div>
+      <p class="hero-desc reveal">
+        Ingénieur QA Automation · 3 ans d'expérience · Certifié ISTQB<br />
+        Spécialisé en <strong>Selenium / Java / BDD / CI-CD</strong>
+      </p>
+      <div class="hero-cta reveal">
+        <a href="#projects" class="btn btn-primary" id="hero-projects-btn">Voir mes projets</a>
+        <a href="#contact" class="btn btn-outline" id="hero-contact-btn">Me contacter</a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="stat">
+          <span class="stat-number">3+</span>
+          <span class="stat-label">Ans d'exp.</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Projets majeurs</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">ISTQB</span>
+          <span class="stat-label">Certifié</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">À propos</p>
+        <h2 class="section-title">Qui suis-je <span class="gradient-text">?</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card reveal">
+          <div class="about-avatar">
+            <div class="avatar-inner">AH</div>
+            <div class="avatar-ring"></div>
+          </div>
+          <div class="about-info">
+            <h3>Akrem Hammami</h3>
+            <p class="about-role">Software QA Engineer</p>
+            <div class="about-location">
+              <span class="icon-pin">📍</span> Ariana, Tunisie
+            </div>
+          </div>
+        </div>
+        <div class="about-text reveal">
+          <p>
+            Ingénieur <strong>QA Automation</strong> depuis 2022, je me spécialise dans la conception de frameworks
+            de tests robustes avec <strong>Selenium/Java</strong>, le BDD avec <strong>Cucumber</strong>
+            et l'intégration continue CI/CD.
+          </p>
+          <p>
+            Certifié <strong>ISTQB Foundation Level</strong>, j'ai travaillé sur des projets variés —
+            assurances, SaaS, ERP — en adoptant une approche Agile/Scrum rigoureuse
+            pour réduire les cycles de régression et augmenter la couverture sur les modules critiques.
+          </p>
+          <div class="about-tags">
+            <span class="tag">Agile / Scrum</span>
+            <span class="tag">BDD</span>
+            <span class="tag">CI/CD</span>
+            <span class="tag">ISTQB</span>
+            <span class="tag">Page Object Model</span>
+          </div>
+          <div class="about-links">
+            <a href="https://github.com/akremhammamii" target="_blank" rel="noopener" class="social-link" id="about-github-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="mailto:hammami-akrem@outlook.com" class="social-link" id="about-email-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              Email
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Compétences</p>
+        <h2 class="section-title">Stack <span class="gradient-text">Technique</span></h2>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-category reveal">
+          <h3 class="skill-cat-title">
+            <span class="cat-icon">🤖</span> Automatisation
+          </h3>
+          <div class="skill-item">
+            <div class="skill-header"><span>Selenium WebDriver</span><span>95%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>Cucumber BDD</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>JUnit / TestNG</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>Maven</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>Page Object Model</span><span>95%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <h3 class="skill-cat-title">
+            <span class="cat-icon">💻</span> Langages & Outils
+          </h3>
+          <div class="skill-item">
+            <div class="skill-header"><span>Java</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>Git / GitHub</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>Postman (API)</span><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>SQL</span><span>75%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>JIRA / MANTIS</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <h3 class="skill-cat-title">
+            <span class="cat-icon">🚀</span> CI/CD & Reporting
+          </h3>
+          <div class="skill-item">
+            <div class="skill-header"><span>GitHub Actions</span><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>Jenkins</span><span>75%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>Allure Reports</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>Cucumber Reports</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span>ExtentReport</span><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="badges-row reveal">
+        <div class="badge-chip">Agile / Scrum</div>
+        <div class="badge-chip">Tests E2E</div>
+        <div class="badge-chip">Tests TNR</div>
+        <div class="badge-chip">Smoke Tests</div>
+        <div class="badge-chip">Planification QA</div>
+        <div class="badge-chip">Analyse cause racine</div>
+        <div class="badge-chip">ISTQB Certified</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Carrière</p>
+        <h2 class="section-title">Expériences <span class="gradient-text">Pro</span></h2>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-company">INETUM, Tunisie</h3>
+                <p class="timeline-role">Ingénieur QA Logiciel</p>
+              </div>
+              <span class="timeline-date">Sept. 2022 — Présent</span>
+            </div>
+            <div class="timeline-projects">
+
+              <div class="tl-project">
+                <div class="tl-project-header">
+                  <span class="project-badge">Assurances</span>
+                  <span class="tl-project-name">COMAR & HAYETT</span>
+                  <span class="tl-project-period">Mai 2024 — Présent</span>
+                </div>
+                <ul class="tl-list">
+                  <li>Automatisation de scripts <strong>Selenium/Java (POM)</strong> → couverture élevée sur parcours utilisateurs critiques</li>
+                  <li>Tests API <strong>Postman</strong> : validation schémas JSON, codes HTTP, temps de réponse → détection précoce des régressions back-end</li>
+                  <li>Gestion anomalies <strong>MANTIS</strong> : suivi rigoureux et résolution dans les délais</li>
+                </ul>
+              </div>
+
+              <div class="tl-project">
+                <div class="tl-project-header">
+                  <span class="project-badge">SaaS</span>
+                  <span class="tl-project-name">Cynoia</span>
+                  <span class="tl-project-period">Oct. 2023 — Mai 2024</span>
+                </div>
+                <ul class="tl-list">
+                  <li>Framework <strong>BDD Selenium+Cucumber</strong> : conversion de tests manuels en scénarios automatisés → accélération des cycles de régression</li>
+                  <li>Pipeline <strong>GitHub Actions + Allure</strong> : feedback développeur plus rapide, réduction des tests instables</li>
+                  <li>Participation cérémonies <strong>Scrum</strong> ; gestion anomalies JIRA avec analyse de cause racine</li>
+                </ul>
+              </div>
+
+              <div class="tl-project">
+                <div class="tl-project-header">
+                  <span class="project-badge">ERP</span>
+                  <span class="tl-project-name">THYMSYS</span>
+                  <span class="tl-project-period">Sept. 2022 — Sept. 2023</span>
+                </div>
+                <ul class="tl-list">
+                  <li>Conception de cas de tests <strong>TestQuality</strong> ; exécution campagnes TNR et smoke tests</li>
+                  <li>Suivi anomalies <strong>JIRA</strong> : validation systématique des corrections ; contribution à la stabilité des mises en production</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Projets</p>
+        <h2 class="section-title">Projets <span class="gradient-text">Personnels</span></h2>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card reveal" id="project-selenium-bdd">
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <div class="project-icon">🧪</div>
+            <div class="project-links">
+              <a href="https://github.com/akremhammamii" target="_blank" rel="noopener" aria-label="GitHub" class="project-link-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-name">Framework Selenium-Cucumber-BDD</h3>
+          <p class="project-desc">
+            Framework complet basé sur le Page Object Model avec Maven, intégration CI/CD Jenkins et rapports Allure.
+            Réutilisable sur plusieurs projets, optimisant le développement de nouveaux scripts.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">Selenium</span>
+            <span class="tech-tag">Cucumber</span>
+            <span class="tech-tag">Maven</span>
+            <span class="tech-tag">Jenkins</span>
+            <span class="tech-tag">Allure</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal" id="project-jenkins-pipeline">
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <div class="project-icon">⚙️</div>
+            <div class="project-links">
+              <a href="https://github.com/akremhammamii" target="_blank" rel="noopener" aria-label="GitHub" class="project-link-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-name">Pipeline Jenkins QA</h3>
+          <p class="project-desc">
+            Pipeline CI/CD automatisé intégrant build, exécution des tests et reporting.
+            Détection anticipée des régressions avant mise en production, avec historique des builds.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Jenkins</span>
+            <span class="tech-tag">CI/CD</span>
+            <span class="tech-tag">Selenium</span>
+            <span class="tech-tag">Allure</span>
+            <span class="tech-tag">Java</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal" id="project-portfolio">
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <div class="project-icon">🌐</div>
+            <div class="project-links">
+              <a href="https://github.com/akremhammamii/Akrem-Hammami.github.io" target="_blank" rel="noopener" aria-label="GitHub" class="project-link-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-name">Portfolio GitHub Pages</h3>
+          <p class="project-desc">
+            Site portfolio personnel hébergé sur GitHub Pages. Design dark mode premium, animations CSS/JS,
+            entièrement responsive. Ce site que vous consultez actuellement !
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">GitHub Pages</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FORMATION ===== -->
+  <section id="education" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Formation</p>
+        <h2 class="section-title">Éducation & <span class="gradient-text">Certifications</span></h2>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-card reveal">
+          <div class="edu-icon">🏆</div>
+          <div class="edu-content">
+            <h3>ISTQB Foundation Level</h3>
+            <p class="edu-org">Proservices Training, Tunisie</p>
+            <p class="edu-date">2022</p>
+            <p class="edu-desc">Certification internationale en test logiciel — gestion de tests, techniques de conception, gestion des défauts.</p>
+          </div>
+        </div>
+        <div class="edu-card reveal">
+          <div class="edu-icon">🎓</div>
+          <div class="edu-content">
+            <h3>Technicien Supérieur Maintenance Industrielle</h3>
+            <p class="edu-org">CSFT, Tunis</p>
+            <p class="edu-date">2017</p>
+            <p class="edu-desc">Formation technique supérieure en maintenance et systèmes industriels.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Contact</p>
+        <h2 class="section-title">Travaillons <span class="gradient-text">ensemble</span></h2>
+        <p class="section-subtitle reveal">Je suis disponible immédiatement pour de nouvelles opportunités.</p>
+      </div>
+      <div class="contact-grid">
+        <a href="mailto:hammami-akrem@outlook.com" class="contact-card reveal" id="contact-email">
+          <div class="contact-card-icon">📧</div>
+          <h3>Email</h3>
+          <p>hammami-akrem@outlook.com</p>
+        </a>
+        <a href="https://github.com/akremhammamii" target="_blank" rel="noopener" class="contact-card reveal" id="contact-github">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </div>
+          <h3>GitHub</h3>
+          <p>github.com/akremhammamii</p>
+        </a>
+        <a href="tel:+21655093323" class="contact-card reveal" id="contact-phone">
+          <div class="contact-card-icon">📞</div>
+          <h3>Téléphone</h3>
+          <p>+216 55 093 323</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 <strong>Akrem Hammami</strong> · Fait avec ❤️ &amp; GitHub Pages</p>
+      <p class="footer-sub">Software QA Engineer · Ariana, Tunisie</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
