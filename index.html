@@ -300,6 +300,7 @@
     <li><a href="#bugs" data-i18n="nav.bugs">Bug Hunter</a></li>
     <li><a href="#xp" data-i18n="nav.exp">Experience</a></li>
   </ul>
+  <button class="lang-toggle" id="langToggle" aria-label="Switch language">FR</button>
   <a href="#contact" class="nav-cta" data-i18n="nav.contact">Contact me →</a>
 </nav>
 
@@ -933,7 +934,6 @@
       applyLang(currentLang === 'en' ? 'fr' : 'en');
     });
   }
-  applyLang(currentLang);
 
   // SCROLL REVEAL
   const ro=new IntersectionObserver(entries=>{
@@ -1146,6 +1146,7 @@
 
   document.getElementById('runBtn').addEventListener('click',runTests);
   document.getElementById('rstBtn').addEventListener('click',resetRunner);
+  applyLang(currentLang);
 </script>
 
 </body>
