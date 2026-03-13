@@ -3,456 +3,1175 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Akrem Hammami — Software QA Engineer & Test Automation Specialist. Portfolio professionnel." />
-  <title>Akrem Hammami | QA Engineer Portfolio</title>
+  <title>Akrem Hammami — QA Automation Engineer</title>
+  <meta name="description" content="Ingénieur QA Automation avec 3 ans d'expérience. Certifié ISTQB. Spécialisé Selenium / Java / BDD / CI-CD." />
+  <meta name="author" content="Akrem Hammami" />
+  <meta property="og:title" content="Akrem Hammami — QA Automation Engineer" />
+  <meta property="og:description" content="Ingénieur QA Automation · 3 ans d'expérience · Certifié ISTQB" />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200;12..96,400;12..96,500;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Reset & Tokens ─────────────────────────────────── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent:   #6d28d9;
+      --accent2:  #06b6d4;
+      --accent-light: #ede9fe;
+      --fg:       #0a0a0f;
+      --fg2:      #4a4a5a;
+      --fg3:      #9090a0;
+      --bg:       #fafafa;
+      --card:     #ffffff;
+      --border:   rgba(0,0,0,0.08);
+      --border2:  rgba(0,0,0,0.14);
+      --shadow-sm: 0 2px 10px rgba(0,0,0,0.06);
+      --shadow-md: 0 8px 32px rgba(0,0,0,0.09);
+      --shadow-lg: 0 20px 60px rgba(0,0,0,0.12);
+      --shadow-accent: 0 8px 30px rgba(109,40,217,0.35);
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-pill: 100px;
+      --transition: 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Blob cursor ──────────────────────────────────────── */
+    #blob {
+      position: fixed;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle,
+        rgba(109,40,217,0.13) 0%,
+        rgba(6,182,212,0.08)  45%,
+        transparent           70%
+      );
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: left 1s cubic-bezier(0.25,0.46,0.45,0.94),
+                  top  1s cubic-bezier(0.25,0.46,0.45,0.94);
+      z-index: 0;
+      filter: blur(24px);
+    }
+
+    /* ─── Noise texture overlay ───────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.6;
+    }
+
+    /* ─── Nav ─────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 48px;
+      background: rgba(250,250,250,0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: -0.05em;
+      color: var(--fg);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--fg2);
+      text-decoration: none;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: var(--accent);
+      transition: width 0.25s ease;
+    }
+    .nav-links a:hover { color: var(--fg); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      background: var(--fg);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 9px 20px;
+      border-radius: var(--radius-pill);
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { background: var(--accent); transform: scale(1.03); }
+
+    /* ─── Hero ────────────────────────────────────────────── */
+    #home {
+      position: relative;
+      z-index: 1;
+      padding: 96px 48px 80px;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      border: 1px solid var(--border2);
+      border-radius: var(--radius-pill);
+      padding: 7px 16px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--fg2);
+      margin-bottom: 40px;
+      width: fit-content;
+      box-shadow: var(--shadow-sm);
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.05s forwards;
+    }
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 3px rgba(34,197,94,0.2);
+      animation: pulseDot 2.2s infinite;
+      flex-shrink: 0;
+    }
+    @keyframes pulseDot {
+      0%, 100% { box-shadow: 0 0 0 3px rgba(34,197,94,0.2); }
+      50%       { box-shadow: 0 0 0 6px rgba(34,197,94,0.1); }
+    }
+
+    .hero-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 800;
+      font-size: clamp(52px, 7.5vw, 96px);
+      line-height: 0.93;
+      letter-spacing: -0.04em;
+      margin-bottom: 32px;
+    }
+    .hero-title .line {
+      display: block;
+      opacity: 0;
+      transform: translateY(32px);
+    }
+    .hero-title .line:nth-child(1) { animation: fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.15s forwards; }
+    .hero-title .line:nth-child(2) { animation: fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.28s forwards; }
+
+    .accent-word {
+      color: var(--accent);
+      position: relative;
+      display: inline-block;
+    }
+    .accent-word::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 0;
+      width: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 2px;
+      animation: lineGrow 0.7s cubic-bezier(0.16,1,0.3,1) 0.95s forwards;
+    }
+    @keyframes lineGrow { to { width: 100%; } }
+
+    .hero-sub {
+      font-size: 17px;
+      color: var(--fg2);
+      line-height: 1.75;
+      max-width: 560px;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.42s forwards;
+      margin-bottom: 44px;
+    }
+    .hero-sub strong { color: var(--fg); font-weight: 500; }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.56s forwards;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #4f46e5);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 14px 30px;
+      border-radius: var(--radius-pill);
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-accent);
+      transition: transform 0.25s, box-shadow 0.25s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 40px rgba(109,40,217,0.45);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--fg);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 14px 30px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border2);
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s, border-color 0.25s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0,0,0,0.22);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+      margin-top: 64px;
+      padding-top: 48px;
+      border-top: 1px solid var(--border);
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.72s forwards;
+    }
+    .stat-num {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 800;
+      font-size: 40px;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--fg);
+    }
+    .stat-num sup { color: var(--accent); font-size: 0.55em; vertical-align: super; }
+    .stat-label {
+      font-size: 12px;
+      color: var(--fg3);
+      margin-top: 6px;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+
+    /* ─── Section wrapper ─────────────────────────────────── */
+    .section {
+      position: relative;
+      z-index: 1;
+      padding: 80px 48px;
+      border-top: 1px solid var(--border);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 800;
+      font-size: clamp(28px, 4vw, 40px);
+      letter-spacing: -0.03em;
+      margin-bottom: 40px;
+      line-height: 1.1;
+    }
+
+    /* ─── About split ─────────────────────────────────────── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .about-text p {
+      font-size: 15px;
+      color: var(--fg2);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .about-text p strong { color: var(--fg); font-weight: 500; }
+    .about-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+    .about-pill {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-light);
+      color: var(--accent);
+      border: 1px solid #c4b5fd;
+    }
+    .about-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 36px;
+      box-shadow: var(--shadow-md);
+    }
+    .about-card-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .about-card-row:last-child { border-bottom: none; }
+    .about-card-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--accent-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .about-card-label { font-size: 11px; color: var(--fg3); margin-bottom: 2px; }
+    .about-card-value { font-size: 14px; font-weight: 500; color: var(--fg); }
+
+    /* ─── Skills cloud ────────────────────────────────────── */
+    .skills-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skill-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border2);
+      background: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--fg);
+      cursor: default;
+      transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 0.25s,
+                  border-color 0.25s;
+      box-shadow: var(--shadow-sm);
+      will-change: transform;
+    }
+    .skill-chip:hover {
+      box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+      border-color: rgba(0,0,0,0.18);
+    }
+    .skill-chip.featured {
+      background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+      border-color: #c4b5fd;
+      color: #5b21b6;
+    }
+    .skill-chip.featured:hover {
+      box-shadow: 0 12px 32px rgba(109,40,217,0.18);
+    }
+    .chip-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ─── Experience ──────────────────────────────────────── */
+    .exp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .exp-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow 0.3s;
+      cursor: default;
+    }
+    .exp-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .exp-card:hover { transform: translateY(-7px); box-shadow: var(--shadow-lg); }
+    .exp-card:hover::before { transform: scaleX(1); }
+    .exp-period {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--fg3);
+      margin-bottom: 12px;
+    }
+    .exp-company {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .exp-domain {
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+    .exp-desc {
+      font-size: 13px;
+      color: var(--fg2);
+      line-height: 1.75;
+    }
+    .exp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 18px;
+    }
+    .exp-tag {
+      font-size: 10px;
+      font-weight: 500;
+      padding: 4px 10px;
+      background: #f4f4f6;
+      border-radius: var(--radius-pill);
+      color: var(--fg2);
+    }
+
+    /* ─── Projects ────────────────────────────────────────── */
+    .proj-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .proj-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow 0.3s;
+      cursor: default;
+    }
+    .proj-card:hover { transform: translateY(-7px); box-shadow: var(--shadow-lg); }
+    .proj-card.featured {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: center;
+    }
+    .proj-num {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 800;
+      font-size: 60px;
+      letter-spacing: -0.05em;
+      color: #f0f0f2;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+    .proj-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .proj-desc {
+      font-size: 13px;
+      color: var(--fg2);
+      line-height: 1.75;
+    }
+    .proj-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 18px;
+    }
+    .proj-tech {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 4px 10px;
+      background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+      border-radius: var(--radius-pill);
+      color: #5b21b6;
+    }
+    .proj-arrow {
+      position: absolute;
+      top: 28px;
+      right: 28px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid var(--border2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      transition: background 0.2s, color 0.2s, transform 0.3s;
+      background: #fff;
+    }
+    .proj-card:hover .proj-arrow {
+      background: var(--fg);
+      color: #fff;
+      transform: rotate(-45deg);
+    }
+    .proj-visual {
+      background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+      border-radius: 16px;
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 72px;
+      font-weight: 800;
+      color: #c4b5fd;
+      letter-spacing: -0.04em;
+      flex-shrink: 0;
+    }
+
+    /* ─── Education ───────────────────────────────────────── */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .edu-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      transition: transform var(--transition), box-shadow 0.3s;
+    }
+    .edu-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+    .edu-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--accent-light);
+      border: 1px solid #c4b5fd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+    .edu-year {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--fg3);
+      margin-bottom: 6px;
+    }
+    .edu-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .edu-school { font-size: 13px; color: var(--fg2); }
+
+    /* ─── Contact strip ───────────────────────────────────── */
+    #contact {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(135deg, var(--accent) 0%, #4f46e5 45%, var(--accent2) 100%);
+      padding: 100px 48px;
+      text-align: center;
+      overflow: hidden;
+    }
+    #contact::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    #contact::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      right: -80px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      pointer-events: none;
+    }
+    .contact-inner { position: relative; z-index: 1; }
+    .contact-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 800;
+      font-size: clamp(36px, 5vw, 56px);
+      letter-spacing: -0.04em;
+      color: #fff;
+      margin-bottom: 14px;
+      line-height: 1.05;
+    }
+    .contact-sub {
+      color: rgba(255,255,255,0.72);
+      font-size: 16px;
+      margin-bottom: 44px;
+      font-weight: 400;
+    }
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.14);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.22);
+      padding: 13px 24px;
+      border-radius: var(--radius-pill);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .contact-link:hover {
+      background: rgba(255,255,255,0.26);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    .contact-link svg {
+      width: 16px;
+      height: 16px;
+      stroke: rgba(255,255,255,0.8);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ─── Footer ──────────────────────────────────────────── */
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 28px 48px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--fg3);
+    }
+    footer span { color: var(--accent); }
+
+    /* ─── Scroll reveal ───────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── Keyframes ───────────────────────────────────────── */
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── Responsive ──────────────────────────────────────── */
+    @media (max-width: 900px) {
+      nav { padding: 14px 24px; }
+      .nav-links { display: none; }
+      #home { padding: 72px 24px 60px; min-height: auto; }
+      .section { padding: 60px 24px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .exp-grid { grid-template-columns: 1fr; }
+      .proj-grid { grid-template-columns: 1fr; }
+      .proj-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+      .proj-visual { display: none; }
+      .edu-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 28px; }
+      #contact { padding: 72px 24px; }
+      .contact-links { flex-direction: column; align-items: center; }
+    }
+
+    @media (max-width: 600px) {
+      .hero-title { font-size: 44px; }
+      .hero-actions { flex-direction: column; }
+      .btn-primary, .btn-secondary { text-align: center; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ===== NAVIGATION ===== -->
-  <nav id="navbar">
-    <div class="nav-container">
-      <a href="#home" class="nav-logo">AH<span class="dot">.</span></a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about" class="nav-link">À propos</a></li>
-        <li><a href="#skills" class="nav-link">Compétences</a></li>
-        <li><a href="#experience" class="nav-link">Expérience</a></li>
-        <li><a href="#projects" class="nav-link">Projets</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+  <!-- Ambient blob -->
+  <div id="blob"></div>
+
+  <!-- ── Nav ──────────────────────────────────────────────── -->
+  <nav>
+    <a href="#home" class="nav-logo">A<span>H</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#skills">Stack</a></li>
+      <li><a href="#experience">Expérience</a></li>
+      <li><a href="#projects">Projets</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Me contacter →</a>
   </nav>
 
-  <!-- ===== HERO ===== -->
-  <section id="home" class="hero">
-    <div class="hero-bg">
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
-      <div class="orb orb-3"></div>
-      <div class="grid-overlay"></div>
+  <!-- ── Hero ─────────────────────────────────────────────── -->
+  <section id="home">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Disponible immédiatement · Ariana, Tunisie
     </div>
-    <div class="hero-content">
-      <div class="hero-badge reveal">
-        <span class="badge-dot"></span>
-        Disponible immédiatement
-      </div>
-      <h1 class="hero-name reveal">
-        Akrem<br /><span class="gradient-text">Hammami</span>
-      </h1>
-      <div class="hero-title reveal">
-        <span class="typing-text" id="typing-text"></span><span class="cursor">|</span>
-      </div>
-      <p class="hero-desc reveal">
-        Ingénieur QA Automation · 3 ans d'expérience · Certifié ISTQB<br />
-        Spécialisé en <strong>Selenium / Java / BDD / CI-CD</strong>
-      </p>
-      <div class="hero-cta reveal">
-        <a href="#projects" class="btn btn-primary" id="hero-projects-btn">Voir mes projets</a>
-        <a href="#contact" class="btn btn-outline" id="hero-contact-btn">Me contacter</a>
-      </div>
-      <div class="hero-stats reveal">
-        <div class="stat">
-          <span class="stat-number">3+</span>
-          <span class="stat-label">Ans d'exp.</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number">3</span>
-          <span class="stat-label">Projets majeurs</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number">ISTQB</span>
-          <span class="stat-label">Certifié</span>
-        </div>
-      </div>
+
+    <h1 class="hero-title">
+      <span class="line">Je teste. Je casse.</span>
+      <span class="line">Je <span class="accent-word">certifie</span> la qualité.</span>
+    </h1>
+
+    <p class="hero-sub">
+      <strong>Akrem Hammami</strong> — Ingénieur QA Automation avec 3 ans d'expérience
+      sur <strong>Selenium / Java / BDD</strong>. Certifié ISTQB. Secteurs : assurances, SaaS, ERP.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#projects" class="btn-primary">Voir mes projets ↓</a>
+      <a href="https://github.com/akremhammamii" target="_blank" rel="noopener" class="btn-secondary">GitHub →</a>
     </div>
-    <div class="scroll-indicator">
-      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
-      <span>Scroll</span>
+
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">3<sup>+</sup></div>
+        <div class="stat-label">Ans d'expérience</div>
+      </div>
+      <div>
+        <div class="stat-num">3</div>
+        <div class="stat-label">Projets majeurs</div>
+      </div>
+      <div>
+        <div class="stat-num">ISTQB</div>
+        <div class="stat-label">Certification internationale</div>
+      </div>
+      <div>
+        <div class="stat-num">100<sup>%</sup></div>
+        <div class="stat-label">Disponible</div>
+      </div>
     </div>
   </section>
 
-  <!-- ===== ABOUT ===== -->
+  <!-- ── About ─────────────────────────────────────────────── -->
   <section id="about" class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-label">À propos</p>
-        <h2 class="section-title">Qui suis-je <span class="gradient-text">?</span></h2>
-      </div>
-      <div class="about-grid">
-        <div class="about-card reveal">
-          <div class="about-avatar">
-            <div class="avatar-inner">AH</div>
-            <div class="avatar-ring"></div>
-          </div>
-          <div class="about-info">
-            <h3>Akrem Hammami</h3>
-            <p class="about-role">Software QA Engineer</p>
-            <div class="about-location">
-              <span class="icon-pin">📍</span> Ariana, Tunisie
-            </div>
-          </div>
-        </div>
-        <div class="about-text reveal">
-          <p>
-            Ingénieur <strong>QA Automation</strong> depuis 2022, je me spécialise dans la conception de frameworks
-            de tests robustes avec <strong>Selenium/Java</strong>, le BDD avec <strong>Cucumber</strong>
-            et l'intégration continue CI/CD.
-          </p>
-          <p>
-            Certifié <strong>ISTQB Foundation Level</strong>, j'ai travaillé sur des projets variés —
-            assurances, SaaS, ERP — en adoptant une approche Agile/Scrum rigoureuse
-            pour réduire les cycles de régression et augmenter la couverture sur les modules critiques.
-          </p>
-          <div class="about-tags">
-            <span class="tag">Agile / Scrum</span>
-            <span class="tag">BDD</span>
-            <span class="tag">CI/CD</span>
-            <span class="tag">ISTQB</span>
-            <span class="tag">Page Object Model</span>
-          </div>
-          <div class="about-links">
-            <a href="https://github.com/akremhammamii" target="_blank" rel="noopener" class="social-link" id="about-github-link">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              GitHub
-            </a>
-            <a href="mailto:hammami-akrem@outlook.com" class="social-link" id="about-email-link">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-              Email
-            </a>
-          </div>
+    <div class="section-eyebrow">// 01 — À propos</div>
+    <div class="section-title">Qui suis-je ?</div>
+    <div class="about-grid reveal">
+      <div class="about-text">
+        <p>
+          Ingénieur <strong>QA Automation</strong> depuis 2022, je me spécialise dans la conception
+          de frameworks de tests robustes avec <strong>Selenium/Java</strong>, le BDD avec
+          <strong>Cucumber</strong> et l'intégration continue CI/CD.
+        </p>
+        <p>
+          Certifié <strong>ISTQB Foundation Level</strong>, j'ai travaillé sur des projets variés —
+          assurances, SaaS, ERP — en adoptant une approche Agile/Scrum rigoureuse pour réduire
+          les cycles de régression et augmenter la couverture sur les modules critiques.
+        </p>
+        <div class="about-pills">
+          <span class="about-pill">Agile / Scrum</span>
+          <span class="about-pill">BDD</span>
+          <span class="about-pill">CI/CD</span>
+          <span class="about-pill">ISTQB Certified</span>
+          <span class="about-pill">Page Object Model</span>
+          <span class="about-pill">Tests E2E</span>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ===== SKILLS ===== -->
-  <section id="skills" class="section section-alt">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-label">Compétences</p>
-        <h2 class="section-title">Stack <span class="gradient-text">Technique</span></h2>
-      </div>
-      <div class="skills-grid">
-
-        <div class="skill-category reveal">
-          <h3 class="skill-cat-title">
-            <span class="cat-icon">🤖</span> Automatisation
-          </h3>
-          <div class="skill-item">
-            <div class="skill-header"><span>Selenium WebDriver</span><span>95%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span>Cucumber BDD</span><span>90%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span>JUnit / TestNG</span><span>85%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span>Maven</span><span>85%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span>Page Object Model</span><span>95%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+      <div class="about-card">
+        <div class="about-card-row">
+          <div class="about-card-icon">📍</div>
+          <div>
+            <div class="about-card-label">Localisation</div>
+            <div class="about-card-value">Ariana, Tunisie</div>
           </div>
         </div>
-
-        <div class="skill-category reveal">
-          <h3 class="skill-cat-title">
-            <span class="cat-icon">💻</span> Langages & Outils
-          </h3>
-          <div class="skill-item">
-            <div class="skill-header"><span>Java</span><span>90%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span>Git / GitHub</span><span>85%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span>Postman (API)</span><span>80%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span>SQL</span><span>75%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span>JIRA / MANTIS</span><span>90%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+        <div class="about-card-row">
+          <div class="about-card-icon">💼</div>
+          <div>
+            <div class="about-card-label">Expérience</div>
+            <div class="about-card-value">3 ans — INETUM Tunisie</div>
           </div>
         </div>
-
-        <div class="skill-category reveal">
-          <h3 class="skill-cat-title">
-            <span class="cat-icon">🚀</span> CI/CD & Reporting
-          </h3>
-          <div class="skill-item">
-            <div class="skill-header"><span>GitHub Actions</span><span>80%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span>Jenkins</span><span>75%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span>Allure Reports</span><span>85%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span>Cucumber Reports</span><span>90%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span>ExtentReport</span><span>80%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+        <div class="about-card-row">
+          <div class="about-card-icon">🏆</div>
+          <div>
+            <div class="about-card-label">Certification</div>
+            <div class="about-card-value">ISTQB Foundation Level</div>
           </div>
         </div>
-
-      </div>
-
-      <div class="badges-row reveal">
-        <div class="badge-chip">Agile / Scrum</div>
-        <div class="badge-chip">Tests E2E</div>
-        <div class="badge-chip">Tests TNR</div>
-        <div class="badge-chip">Smoke Tests</div>
-        <div class="badge-chip">Planification QA</div>
-        <div class="badge-chip">Analyse cause racine</div>
-        <div class="badge-chip">ISTQB Certified</div>
+        <div class="about-card-row">
+          <div class="about-card-icon">✅</div>
+          <div>
+            <div class="about-card-label">Statut</div>
+            <div class="about-card-value" style="color:#22c55e;font-weight:600;">Disponible immédiatement</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== EXPERIENCE ===== -->
+  <!-- ── Skills ─────────────────────────────────────────────── -->
+  <section id="skills" class="section">
+    <div class="section-eyebrow">// 02 — Stack technique</div>
+    <div class="section-title">Ce que je maîtrise</div>
+    <div class="skills-cloud reveal">
+      <div class="skill-chip featured"><span class="chip-dot" style="background:#6d28d9"></span>Selenium WebDriver</div>
+      <div class="skill-chip featured"><span class="chip-dot" style="background:#7c3aed"></span>Cucumber BDD</div>
+      <div class="skill-chip featured"><span class="chip-dot" style="background:#5b21b6"></span>Java</div>
+      <div class="skill-chip"><span class="chip-dot" style="background:#06b6d4"></span>Page Object Model</div>
+      <div class="skill-chip"><span class="chip-dot" style="background:#06b6d4"></span>JUnit / TestNG</div>
+      <div class="skill-chip"><span class="chip-dot" style="background:#06b6d4"></span>Maven</div>
+      <div class="skill-chip"><span class="chip-dot" style="background:#f59e0b"></span>GitHub Actions</div>
+      <div class="skill-chip"><span class="chip-dot" style="background:#f59e0b"></span>Jenkins</div>
+      <div class="skill-chip"><span class="chip-dot" style="background:#22c55e"></span>Postman — API Tests</div>
+      <div class="skill-chip"><span class="chip-dot" style="background:#22c55e"></span>SQL</div>
+      <div class="skill-chip"><span class="chip-dot" style="background:#64748b"></span>Allure Reports</div>
+      <div class="skill-chip"><span class="chip-dot" style="background:#64748b"></span>ExtentReport</div>
+      <div class="skill-chip"><span class="chip-dot" style="background:#64748b"></span>JIRA / MANTIS</div>
+      <div class="skill-chip"><span class="chip-dot" style="background:#64748b"></span>Git / GitHub</div>
+      <div class="skill-chip"><span class="chip-dot" style="background:#ec4899"></span>Agile / Scrum</div>
+      <div class="skill-chip"><span class="chip-dot" style="background:#ec4899"></span>Smoke Tests</div>
+      <div class="skill-chip"><span class="chip-dot" style="background:#ec4899"></span>Tests TNR</div>
+      <div class="skill-chip"><span class="chip-dot" style="background:#ec4899"></span>Planification QA</div>
+    </div>
+  </section>
+
+  <!-- ── Experience ──────────────────────────────────────────── -->
   <section id="experience" class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-label">Carrière</p>
-        <h2 class="section-title">Expériences <span class="gradient-text">Pro</span></h2>
-      </div>
-      <div class="timeline">
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <div>
-                <h3 class="timeline-company">INETUM, Tunisie</h3>
-                <p class="timeline-role">Ingénieur QA Logiciel</p>
-              </div>
-              <span class="timeline-date">Sept. 2022 — Présent</span>
-            </div>
-            <div class="timeline-projects">
-
-              <div class="tl-project">
-                <div class="tl-project-header">
-                  <span class="project-badge">Assurances</span>
-                  <span class="tl-project-name">COMAR & HAYETT</span>
-                  <span class="tl-project-period">Mai 2024 — Présent</span>
-                </div>
-                <ul class="tl-list">
-                  <li>Automatisation de scripts <strong>Selenium/Java (POM)</strong> → couverture élevée sur parcours utilisateurs critiques</li>
-                  <li>Tests API <strong>Postman</strong> : validation schémas JSON, codes HTTP, temps de réponse → détection précoce des régressions back-end</li>
-                  <li>Gestion anomalies <strong>MANTIS</strong> : suivi rigoureux et résolution dans les délais</li>
-                </ul>
-              </div>
-
-              <div class="tl-project">
-                <div class="tl-project-header">
-                  <span class="project-badge">SaaS</span>
-                  <span class="tl-project-name">Cynoia</span>
-                  <span class="tl-project-period">Oct. 2023 — Mai 2024</span>
-                </div>
-                <ul class="tl-list">
-                  <li>Framework <strong>BDD Selenium+Cucumber</strong> : conversion de tests manuels en scénarios automatisés → accélération des cycles de régression</li>
-                  <li>Pipeline <strong>GitHub Actions + Allure</strong> : feedback développeur plus rapide, réduction des tests instables</li>
-                  <li>Participation cérémonies <strong>Scrum</strong> ; gestion anomalies JIRA avec analyse de cause racine</li>
-                </ul>
-              </div>
-
-              <div class="tl-project">
-                <div class="tl-project-header">
-                  <span class="project-badge">ERP</span>
-                  <span class="tl-project-name">THYMSYS</span>
-                  <span class="tl-project-period">Sept. 2022 — Sept. 2023</span>
-                </div>
-                <ul class="tl-list">
-                  <li>Conception de cas de tests <strong>TestQuality</strong> ; exécution campagnes TNR et smoke tests</li>
-                  <li>Suivi anomalies <strong>JIRA</strong> : validation systématique des corrections ; contribution à la stabilité des mises en production</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+    <div class="section-eyebrow">// 03 — Carrière</div>
+    <div class="section-title">3 ans chez INETUM Tunisie</div>
+    <div class="exp-grid">
+      <div class="exp-card reveal">
+        <div class="exp-period">Mai 2024 — Présent</div>
+        <div class="exp-company">COMAR & HAYETT</div>
+        <div class="exp-domain">Secteur Assurances</div>
+        <div class="exp-desc">
+          Automatisation de scripts Selenium/Java (POM) pour une couverture élevée
+          sur les parcours utilisateurs critiques. Tests API Postman : validation des schémas JSON,
+          codes HTTP et temps de réponse. Gestion des anomalies MANTIS.
         </div>
+        <div class="exp-tags">
+          <span class="exp-tag">Selenium</span>
+          <span class="exp-tag">Java</span>
+          <span class="exp-tag">POM</span>
+          <span class="exp-tag">Postman</span>
+          <span class="exp-tag">MANTIS</span>
+        </div>
+      </div>
 
+      <div class="exp-card reveal">
+        <div class="exp-period">Oct. 2023 — Mai 2024</div>
+        <div class="exp-company">Cynoia</div>
+        <div class="exp-domain">Secteur SaaS</div>
+        <div class="exp-desc">
+          Framework BDD Selenium+Cucumber : conversion de tests manuels en scénarios automatisés.
+          Pipeline GitHub Actions + Allure pour un feedback développeur plus rapide.
+          Participation aux cérémonies Scrum, gestion JIRA.
+        </div>
+        <div class="exp-tags">
+          <span class="exp-tag">BDD</span>
+          <span class="exp-tag">Cucumber</span>
+          <span class="exp-tag">GitHub Actions</span>
+          <span class="exp-tag">Allure</span>
+          <span class="exp-tag">JIRA</span>
+        </div>
+      </div>
+
+      <div class="exp-card reveal">
+        <div class="exp-period">Sept. 2022 — Sept. 2023</div>
+        <div class="exp-company">THYMSYS</div>
+        <div class="exp-domain">Secteur ERP</div>
+        <div class="exp-desc">
+          Conception de cas de tests TestQuality. Exécution de campagnes TNR et smoke tests.
+          Suivi des anomalies JIRA, validation systématique des corrections
+          et contribution à la stabilité des mises en production.
+        </div>
+        <div class="exp-tags">
+          <span class="exp-tag">TestQuality</span>
+          <span class="exp-tag">JIRA</span>
+          <span class="exp-tag">TNR</span>
+          <span class="exp-tag">Smoke Tests</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== PROJECTS ===== -->
-  <section id="projects" class="section section-alt">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-label">Projets</p>
-        <h2 class="section-title">Projets <span class="gradient-text">Personnels</span></h2>
+  <!-- ── Projects ────────────────────────────────────────────── -->
+  <section id="projects" class="section">
+    <div class="section-eyebrow">// 04 — Projets personnels</div>
+    <div class="section-title">Ce que j'ai construit</div>
+    <div class="proj-grid">
+      <div class="proj-card featured reveal">
+        <div>
+          <div class="proj-num">01</div>
+          <div class="proj-title">Framework Selenium-Cucumber-BDD</div>
+          <div class="proj-desc">
+            Framework complet basé sur le Page Object Model avec Maven.
+            Intégration CI/CD Jenkins et rapports Allure. Entièrement réutilisable
+            sur plusieurs projets — réduit le temps de développement de nouveaux scripts de test.
+          </div>
+          <div class="proj-stack">
+            <span class="proj-tech">Java</span>
+            <span class="proj-tech">Selenium</span>
+            <span class="proj-tech">Cucumber</span>
+            <span class="proj-tech">Maven</span>
+            <span class="proj-tech">Jenkins</span>
+            <span class="proj-tech">Allure</span>
+          </div>
+        </div>
+        <div class="proj-visual">BDD</div>
+        <div class="proj-arrow">→</div>
       </div>
-      <div class="projects-grid">
 
-        <div class="project-card reveal" id="project-selenium-bdd">
-          <div class="project-glow"></div>
-          <div class="project-header">
-            <div class="project-icon">🧪</div>
-            <div class="project-links">
-              <a href="https://github.com/akremhammamii" target="_blank" rel="noopener" aria-label="GitHub" class="project-link-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              </a>
-            </div>
-          </div>
-          <h3 class="project-name">Framework Selenium-Cucumber-BDD</h3>
-          <p class="project-desc">
-            Framework complet basé sur le Page Object Model avec Maven, intégration CI/CD Jenkins et rapports Allure.
-            Réutilisable sur plusieurs projets, optimisant le développement de nouveaux scripts.
-          </p>
-          <div class="project-tech">
-            <span class="tech-tag">Java</span>
-            <span class="tech-tag">Selenium</span>
-            <span class="tech-tag">Cucumber</span>
-            <span class="tech-tag">Maven</span>
-            <span class="tech-tag">Jenkins</span>
-            <span class="tech-tag">Allure</span>
-          </div>
+      <div class="proj-card reveal">
+        <div class="proj-num">02</div>
+        <div class="proj-title">Pipeline Jenkins QA</div>
+        <div class="proj-desc">
+          Pipeline CI/CD automatisé intégrant build, exécution des tests et reporting.
+          Détection anticipée des régressions avant mise en production,
+          avec historique complet des builds.
         </div>
-
-        <div class="project-card reveal" id="project-jenkins-pipeline">
-          <div class="project-glow"></div>
-          <div class="project-header">
-            <div class="project-icon">⚙️</div>
-            <div class="project-links">
-              <a href="https://github.com/akremhammamii" target="_blank" rel="noopener" aria-label="GitHub" class="project-link-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              </a>
-            </div>
-          </div>
-          <h3 class="project-name">Pipeline Jenkins QA</h3>
-          <p class="project-desc">
-            Pipeline CI/CD automatisé intégrant build, exécution des tests et reporting.
-            Détection anticipée des régressions avant mise en production, avec historique des builds.
-          </p>
-          <div class="project-tech">
-            <span class="tech-tag">Jenkins</span>
-            <span class="tech-tag">CI/CD</span>
-            <span class="tech-tag">Selenium</span>
-            <span class="tech-tag">Allure</span>
-            <span class="tech-tag">Java</span>
-          </div>
+        <div class="proj-stack">
+          <span class="proj-tech">Jenkins</span>
+          <span class="proj-tech">CI/CD</span>
+          <span class="proj-tech">Selenium</span>
+          <span class="proj-tech">Allure</span>
         </div>
+        <div class="proj-arrow">→</div>
+      </div>
 
-        <div class="project-card reveal" id="project-portfolio">
-          <div class="project-glow"></div>
-          <div class="project-header">
-            <div class="project-icon">🌐</div>
-            <div class="project-links">
-              <a href="https://github.com/akremhammamii/Akrem-Hammami.github.io" target="_blank" rel="noopener" aria-label="GitHub" class="project-link-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              </a>
-            </div>
-          </div>
-          <h3 class="project-name">Portfolio GitHub Pages</h3>
-          <p class="project-desc">
-            Site portfolio personnel hébergé sur GitHub Pages. Design dark mode premium, animations CSS/JS,
-            entièrement responsive. Ce site que vous consultez actuellement !
-          </p>
-          <div class="project-tech">
-            <span class="tech-tag">HTML</span>
-            <span class="tech-tag">CSS</span>
-            <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">GitHub Pages</span>
-          </div>
+      <div class="proj-card reveal">
+        <div class="proj-num">03</div>
+        <div class="proj-title">Portfolio GitHub Pages</div>
+        <div class="proj-desc">
+          Site portfolio personnel hébergé sur GitHub Pages. Design premium, animations CSS/JS,
+          entièrement responsive. Le site que vous consultez actuellement.
         </div>
-
+        <div class="proj-stack">
+          <span class="proj-tech">HTML</span>
+          <span class="proj-tech">CSS</span>
+          <span class="proj-tech">JavaScript</span>
+          <span class="proj-tech">GitHub Pages</span>
+        </div>
+        <div class="proj-arrow">→</div>
       </div>
     </div>
   </section>
 
-  <!-- ===== FORMATION ===== -->
+  <!-- ── Education ───────────────────────────────────────────── -->
   <section id="education" class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-label">Formation</p>
-        <h2 class="section-title">Éducation & <span class="gradient-text">Certifications</span></h2>
-      </div>
-      <div class="edu-grid">
-        <div class="edu-card reveal">
-          <div class="edu-icon">🏆</div>
-          <div class="edu-content">
-            <h3>ISTQB Foundation Level</h3>
-            <p class="edu-org">Proservices Training, Tunisie</p>
-            <p class="edu-date">2022</p>
-            <p class="edu-desc">Certification internationale en test logiciel — gestion de tests, techniques de conception, gestion des défauts.</p>
-          </div>
+    <div class="section-eyebrow">// 05 — Formation</div>
+    <div class="section-title">Éducation & Certifications</div>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <div class="edu-icon">🏆</div>
+        <div>
+          <div class="edu-year">2022</div>
+          <div class="edu-title">ISTQB Foundation Level</div>
+          <div class="edu-school">Proservices Training, Tunisie — Certification internationale en test logiciel</div>
         </div>
-        <div class="edu-card reveal">
-          <div class="edu-icon">🎓</div>
-          <div class="edu-content">
-            <h3>Technicien Supérieur Maintenance Industrielle</h3>
-            <p class="edu-org">CSFT, Tunis</p>
-            <p class="edu-date">2017</p>
-            <p class="edu-desc">Formation technique supérieure en maintenance et systèmes industriels.</p>
-          </div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-icon">🎓</div>
+        <div>
+          <div class="edu-year">2017</div>
+          <div class="edu-title">Technicien Supérieur — Maintenance Industrielle</div>
+          <div class="edu-school">CSFT, Tunis — Formation technique supérieure en maintenance et systèmes industriels</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== CONTACT ===== -->
-  <section id="contact" class="section section-alt">
-    <div class="container">
-      <div class="section-header reveal">
-        <p class="section-label">Contact</p>
-        <h2 class="section-title">Travaillons <span class="gradient-text">ensemble</span></h2>
-        <p class="section-subtitle reveal">Je suis disponible immédiatement pour de nouvelles opportunités.</p>
-      </div>
-      <div class="contact-grid">
-        <a href="mailto:hammami-akrem@outlook.com" class="contact-card reveal" id="contact-email">
-          <div class="contact-card-icon">📧</div>
-          <h3>Email</h3>
-          <p>hammami-akrem@outlook.com</p>
+  <!-- ── Contact ─────────────────────────────────────────────── -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="contact-title">Travaillons ensemble →</div>
+      <p class="contact-sub">Disponible immédiatement pour de nouvelles opportunités.</p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:hammami-akrem@outlook.com">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,6 12,13 22,6"/></svg>
+          hammami-akrem@outlook.com
         </a>
-        <a href="https://github.com/akremhammamii" target="_blank" rel="noopener" class="contact-card reveal" id="contact-github">
-          <div class="contact-card-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          </div>
-          <h3>GitHub</h3>
-          <p>github.com/akremhammamii</p>
+        <a class="contact-link" href="https://github.com/akremhammamii" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          github.com/akremhammamii
         </a>
-        <a href="tel:+21655093323" class="contact-card reveal" id="contact-phone">
-          <div class="contact-card-icon">📞</div>
-          <h3>Téléphone</h3>
-          <p>+216 55 093 323</p>
+        <a class="contact-link" href="tel:+21655093323">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l1.62-1.62a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +216 55 093 323
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="container">
-      <p>© 2025 <strong>Akrem Hammami</strong> · Fait avec ❤️ &amp; GitHub Pages</p>
-      <p class="footer-sub">Software QA Engineer · Ariana, Tunisie</p>
-    </div>
+  <footer>
+    © 2025 <span>Akrem Hammami</span> · QA Automation Engineer · Ariana, Tunisie
   </footer>
 
-  <script src="script.js"></script>
+  <!-- ── Scripts ──────────────────────────────────────────────── -->
+  <script>
+    // Blob follows cursor
+    const blob = document.getElementById('blob');
+    let mx = window.innerWidth / 2;
+    let my = window.innerHeight / 2;
+
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX;
+      my = e.clientY;
+    });
+
+    function animateBlob() {
+      blob.style.left = mx + 'px';
+      blob.style.top  = (my + window.scrollY) + 'px';
+      requestAnimationFrame(animateBlob);
+    }
+    animateBlob();
+
+    // Magnetic chip effect
+    document.querySelectorAll('.skill-chip').forEach(chip => {
+      chip.addEventListener('mousemove', e => {
+        const r  = chip.getBoundingClientRect();
+        const dx = (e.clientX - r.left - r.width  / 2) * 0.2;
+        const dy = (e.clientY - r.top  - r.height / 2) * 0.2;
+        chip.style.transform = `translate(${dx}px, ${dy - 4}px) scale(1.05)`;
+      });
+      chip.addEventListener('mouseleave', () => {
+        chip.style.transform = '';
+      });
+    });
+
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, i * 90);
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach(el => revealObs.observe(el));
+
+    // Stagger child cards inside grids
+    document.querySelectorAll('.exp-card, .proj-card, .edu-card').forEach((el, i) => {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add('visible'), i * 100);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      el.classList.add('reveal');
+      obs.observe(el);
+    });
+
+    // Active nav link highlight on scroll
+    const sections  = document.querySelectorAll('section[id]');
+    const navLinks  = document.querySelectorAll('.nav-links a');
+
+    const navObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(a => {
+            a.style.color = a.getAttribute('href') === '#' + entry.target.id
+              ? 'var(--accent)'
+              : '';
+          });
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+
+    sections.forEach(s => navObs.observe(s));
+  </script>
 </body>
 </html>
