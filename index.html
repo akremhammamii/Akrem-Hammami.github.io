@@ -856,7 +856,7 @@ footer span{color:var(--ac)}
 
 <button class="to-top" id="toTop" aria-label="Back to top">Top</button>
 
-<footer id="footer-txt"> 2025 <span>Akrem Hammami</span>  QA Automation Engineer  Ariana, Tunisia</footer>
+<footer id="footer-txt">© 2025 <span>Akrem Hammami</span>  QA Automation Engineer  Ariana, Tunisia</footer>
 
 <script>
 const blob=document.getElementById('blob');let mx=innerWidth/2,my=innerHeight/2;document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});(function a(){blob.style.left=mx+'px';blob.style.top=(my+scrollY)+'px';requestAnimationFrame(a)})();
@@ -871,6 +871,8 @@ const I18N_FR={
   "nav-cta-txt": "Contactez-moi ",
   "badge-txt": "Disponible immédiatement · Ariana, Tunisie",
   "hero-title": `Je teste. Je casse. Je <span class="aw">garantis</span> la qualité.`,
+  "hero-l1": "Je teste. Je casse.",
+  "hero-l2": `Je <span class="aw">garantis</span> la qualité.`,
   "hero-sub": `<strong>Akrem Hammami</strong> — Ingénieur QA Automation avec 3 ans d'expérience en <strong>Selenium / Java / BDD</strong>. Certifié ISTQB. Secteurs : Assurance, SaaS, ERP.`,
   "btn-p-hero": "Contactez-moi ",
   "btn-g-hero": "Voir GitHub",
@@ -939,6 +941,8 @@ const I18N_EN={
   "nav-cta-txt": "Get in touch ",
   "badge-txt": "Available immediately · Ariana, Tunisia",
   "hero-title": `I test. I break. I <span class="aw">guarantee</span> quality.`,
+  "hero-l1": "I test. I break.",
+  "hero-l2": `I <span class="aw">guarantee</span> quality.`,
   "hero-sub": `<strong>Akrem Hammami</strong> — QA Automation Engineer with 3 years of experience in <strong>Selenium / Java / BDD</strong>. ISTQB Certified. Sectors: Insurance, SaaS, ERP.`,
   "btn-p-hero": "Get in touch ",
   "btn-g-hero": "View GitHub",
@@ -1306,10 +1310,14 @@ function setLang(next){
     btn.setAttribute('data-lang',lang);
     btn.setAttribute('aria-label',lang==='EN'?'Switch to French':'Switch to English');
   }
+  const heroLines=document.querySelectorAll('#hero-title .ln');
+  if(heroLines[0] && data['hero-l1']) heroLines[0].textContent=data['hero-l1'];
+  if(heroLines[1] && data['hero-l2']) heroLines[1].innerHTML=data['hero-l2'];
   for(let id in data){
     let el=document.getElementById(id);
     if(el){
-      if(id==='hero-title'||id==='hero-sub'||id==='footer-txt'){
+      if(id==='hero-title') continue;
+      if(id==='hero-sub'||id==='footer-txt'){
         el.innerHTML=data[id];
       }else{
         el.innerText=data[id];
@@ -1350,7 +1358,7 @@ if(document.getElementById('mrow')) mObs.observe(document.getElementById('mrow')
 
 const spark=document.getElementById('spark');
 if(spark){
-  const vals=[12,18,15,32,28,50];
+  const vals=[12,18,24,32,42,50];
   vals.forEach((v,i)=>{
     let b=document.createElement('div');
     b.className='sb';
