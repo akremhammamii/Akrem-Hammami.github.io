@@ -312,11 +312,11 @@ footer span{color:var(--ac)}
 <nav>
   <a href="#home" class="logo">A<span>H</span></a>
   <ul class="nav-links">
-    <li><a href="#results">Impact</a></li>
-    <li><a href="#dashboard">Metrics</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#runner">Live Tests</a></li>
-    <li><a href="#xp">Experience</a></li>
+    <li><a href="#results" id="nav-links-impact">Impact</a></li>
+    <li><a href="#dashboard" id="nav-links-metrics">Metrics</a></li>
+    <li><a href="#projects" id="nav-links-projects">Projects</a></li>
+    <li><a href="#runner" id="nav-links-tests">Live Tests</a></li>
+    <li><a href="#xp" id="nav-links-xp">Experience</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:10px">
     <button id="langBtn" onclick="toggleLang()" style="background:transparent;border:1px solid var(--b2);color:var(--fg2);font-family:var(--mono);font-size:11px;font-weight:600;padding:7px 14px;border-radius:100px;cursor:pointer;transition:all .2s;letter-spacing:.08em">FR</button>
@@ -328,20 +328,20 @@ footer span{color:var(--ac)}
 <section id="home">
   <div class="hero-left">
     <div class="badge"><span class="bdot"></span><span id="badge-txt"> Available immediately  Ariana, Tunisia</span></div>
-    <h1 class="hero-title">
+    <h1 class="hero-title" id="hero-title">
       <span class="ln">I test. I break.</span>
       <span class="ln">I <span class="aw">guarantee</span> quality.</span>
     </h1>
-    <p class="hero-sub"><strong>Akrem Hammami</strong>  QA Automation Engineer with 3 years of experience in <strong>Selenium / Java / BDD</strong>. ISTQB Certified. Sectors: Insurance, SaaS, ERP.</p>
+    <p class="hero-sub" id="hero-sub"><strong>Akrem Hammami</strong>  QA Automation Engineer with 3 years of experience in <strong>Selenium / Java / BDD</strong>. ISTQB Certified. Sectors: Insurance, SaaS, ERP.</p>
     <div class="hero-btns">
-      <a href="#contact" class="btn-p">Get in touch </a>
-      <a href="https://github.com/akremhammamii" target="_blank" rel="noopener" class="btn-g">View GitHub</a>
+      <a href="#contact" class="btn-p" id="btn-p-hero">Get in touch </a>
+      <a href="https://github.com/akremhammamii" target="_blank" rel="noopener" class="btn-g" id="btn-g-hero">View GitHub</a>
     </div>
     <div class="stats">
-      <div><div class="stat-n">50<sup>+</sup></div><div class="stat-l">Tests automated</div></div>
-      <div><div class="stat-n">85<sup>%</sup></div><div class="stat-l">Pass rate</div></div>
-      <div><div class="stat-n">3</div><div class="stat-l">Years experience</div></div>
-      <div><div class="stat-n">ISTQB</div><div class="stat-l">Certified</div></div>
+      <div><div class="stat-n">50<sup>+</sup></div><div class="stat-l" id="stat-l-1">Tests automated</div></div>
+      <div><div class="stat-n">85<sup>%</sup></div><div class="stat-l" id="stat-l-2">Pass rate</div></div>
+      <div><div class="stat-n">3</div><div class="stat-l" id="stat-l-3">Years experience</div></div>
+      <div><div class="stat-n">ISTQB</div><div class="stat-l" id="stat-l-4">Certified</div></div>
     </div>
   </div>
   <div class="hero-right">
@@ -349,8 +349,8 @@ footer span{color:var(--ac)}
       <div class="hero-photo-wrap" id="hero-wrap" style="overflow:hidden; position:relative; padding:0;">
         <div id="hero-placeholder" style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; padding:24px;">
           <div class="hero-photo-initials">AH</div>
-          <div class="hero-photo-label">QA Automation Engineer</div>
-          <div style="font-size:10px; color:var(--ac); text-decoration:underline;">Click to add photo</div>
+          <div class="hero-photo-label" id="hero-photo-label">QA Automation Engineer</div>
+          <div style="font-size:10px; color:var(--ac); text-decoration:underline;" id="hero-photo-click">Click to add photo</div>
         </div>
         <img id="profile-preview" style="width:100%; height:100%; object-fit:cover; display:none;" alt="Profile" />
       </div>
@@ -362,27 +362,27 @@ footer span{color:var(--ac)}
 <!-- IMPACT -->
 <div class="fb results-bg" id="results">
 <div class="fi">
-  <div class="ey">// 01  Impact</div>
-  <div class="st">What I bring to a team</div>
-  <div class="ss">Concrete contributions from my work at INETUM  how automation changed the way teams deliver quality software.</div>
+  <div class="ey" id="ey-1">// 01  Impact</div>
+  <div class="st" id="st-1">What I bring to a team</div>
+  <div class="ss" id="ss-1">Concrete contributions from my work at INETUM  how automation changed the way teams deliver quality software.</div>
   <div class="results-grid rv">
     <div class="rc">
       <div class="rc-ico" style="background: linear-gradient(135deg, #f8fafc, #f1f5f9); box-shadow: inset 0 2px 4px rgba(255,255,255,0.8), 0 4px 10px rgba(0,0,0,0.05);"><svg viewBox="0 0 24 24" width="32" height="32"><path d="M12 2L4 6V11C4 16.5 7.5 21 12 22C16.5 21 20 16.5 20 11V6L12 2Z" fill="#f87171" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 2v20c4.5-1 8-5.5 8-11V6l-8-4z" fill="#ffffff"/><path d="M12 2L4 6v5c0 5.5 3.5 10 8 11V2z" fill="#f87171"/><path d="M12 2L4 6V11C4 16.5 7.5 21 12 22C16.5 21 20 16.5 20 11V6L12 2Z" fill="none" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
-      <div class="rc-val">Fewer</div>
-      <div class="rc-lbl">Production Bugs</div>
-      <div class="rc-desc">Through proactive defect detection using automated regression suites before each release</div>
+      <div class="rc-val" id="rc-val-1">Fewer</div>
+      <div class="rc-lbl" id="rc-lbl-1">Production Bugs</div>
+      <div class="rc-desc" id="rc-desc-1">Through proactive defect detection using automated regression suites before each release</div>
     </div>
     <div class="rc">
       <div class="rc-ico" style="background: linear-gradient(135deg, #f8fafc, #f1f5f9); box-shadow: inset 0 2px 4px rgba(255,255,255,0.8), 0 4px 10px rgba(0,0,0,0.05);"><svg viewBox="0 0 24 24" width="32" height="32"><path d="M13 3L4 14h7v7l9-11h-7V3z" fill="#fde047" stroke="#111827" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
-      <div class="rc-val">Faster</div>
-      <div class="rc-lbl">Regression Cycles</div>
-      <div class="rc-desc">Automating repetitive regression tests freed up manual testing time for exploratory and edge-case testing</div>
+      <div class="rc-val" id="rc-val-2">Faster</div>
+      <div class="rc-lbl" id="rc-lbl-2">Regression Cycles</div>
+      <div class="rc-desc" id="rc-desc-2">Automating repetitive regression tests freed up manual testing time for exploratory and edge-case testing</div>
     </div>
     <div class="rc">
-      <div class="rc-ico" style="background: linear-gradient(135deg, #f8fafc, #f1f5f9); box-shadow: inset 0 2px 4px rgba(255,255,255,0.8), 0 4px 10px rgba(0,0,0,0.05);"><svg viewBox="0 0 24 24" width="32" height="32"><circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#111827" stroke-width="1.5"/><circle cx="12" cy="12" r="6" fill="#ef4444"/><circle cx="12" cy="12" r="2" fill="#ffffff"/><path d="M22 2L15 9" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/><path d="M22 2l-3.5 1 2.5 2.5L22 2z" fill="#3b82f6"/><path d="M18.5 3l-1.5 2-2 1.5M21 5.5l-2 1.5-1.5 2" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-      <div class="rc-val">Reliable</div>
-      <div class="rc-lbl">CI/CD Pipelines</div>
-      <div class="rc-desc">Integrated Allure reporting and GitHub Actions pipelines for instant feedback on every code change</div>
+      <div class="rc-ico" style="background: linear-gradient(135deg, #f8fafc, #f1f5f9); box-shadow: inset 0 2px 4px rgba(255,255,255,0.8), 0 4px 10px rgba(0,0,0,0.05);"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" stroke="#111827" stroke-width="1.5" fill="#ffffff"/><circle cx="12" cy="12" r="6" fill="#ef4444" stroke="none"/><circle cx="12" cy="12" r="2" fill="#ffffff" stroke="none"/><path d="M22 2L15 9" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/><path d="M22 2l-3.5 1 2.5 2.5L22 2z" fill="#3b82f6" stroke="none"/><path d="M18.5 3l-1.5 2-2 1.5M21 5.5l-2 1.5-1.5 2" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div class="rc-val" id="rc-val-3">Reliable</div>
+      <div class="rc-lbl" id="rc-lbl-3">CI/CD Pipelines</div>
+      <div class="rc-desc" id="rc-desc-3">Integrated Allure reporting and GitHub Actions pipelines for instant feedback on every code change</div>
     </div>
   </div>
 </div>
@@ -391,8 +391,8 @@ footer span{color:var(--ac)}
 <!-- TESTIMONIAL -->
 <div class="fb test-bg" id="testimonials">
 <div class="fi">
-  <div class="ey">// 02  Recommendation</div>
-  <div class="st">What my manager says</div>
+  <div class="ey" id="ey-2">// 02  Recommendation</div>
+  <div class="st" id="st-2">What my manager says</div>
   <div class="testimonials rv">
     <div class="tcard">
       <div class="tquote">I had the opportunity to supervise Akrem HAMMAMI's work, which allowed me to judge his impressive technical qualities in software testing. Akrem presents solid versatility in testing in the insurance field, particularly in contract management and claims across all branches, with a strong ability to work in a team. I would therefore be proud to recommend Akrem to join an excellent company and have no doubt of his abilities which will make him, I am sure, an effective person. I am convinced that he will be a valuable asset and will be able to integrate into any work environment.</div>
@@ -414,30 +414,30 @@ footer span{color:var(--ac)}
 <!-- DASHBOARD -->
 <div class="fb dash-bg" id="dashboard">
 <div class="fi">
-  <div class="ey">// 03  Quality Metrics</div>
-  <div class="st">My QA dashboard</div>
-  <div class="ss">Real numbers from my automation work  honest metrics that reflect my actual experience level.</div>
+  <div class="ey" id="ey-3">// 03  Quality Metrics</div>
+  <div class="st" id="st-3">My QA dashboard</div>
+  <div class="ss" id="ss-3">Real numbers from my automation work  honest metrics that reflect my actual experience level.</div>
   <div class="metrics rv" id="mrow">
     <div class="mc pu">
-      <div class="ml">Automation Coverage</div>
+      <div class="ml" id="ml-1">Automation Coverage</div>
       <div class="mv" data-t="72" data-s="%">0%</div>
       <div class="mbar-bg"><div class="mbar" data-w="72"></div></div>
       <div class="mtrend"><span class="tup"> Growing</span>  target 85%</div>
     </div>
     <div class="mc bl">
-      <div class="ml">Tests Written</div>
+      <div class="ml" id="ml-2">Tests Written</div>
       <div class="mv" data-t="50" data-s="+">0</div>
       <div class="mbar-bg"><div class="mbar" data-w="100"></div></div>
       <div class="mtrend"><span class="tup"> Continuous</span> expansion</div>
     </div>
     <div class="mc gr">
-      <div class="ml">Pass Rate</div>
+      <div class="ml" id="ml-3">Pass Rate</div>
       <div class="mv" data-t="85" data-s="%">0%</div>
       <div class="mbar-bg"><div class="mbar" data-w="85"></div></div>
       <div class="mtrend"><span class="tup"> Stable</span>  threshold 80%</div>
     </div>
     <div class="mc rd">
-      <div class="ml">Bugs Documented</div>
+      <div class="ml" id="ml-4">Bugs Documented</div>
       <div class="mv" data-t="18" data-s="+">0</div>
       <div class="mbar-bg"><div class="mbar" data-w="55"></div></div>
       <div class="mtrend"><span class="tdn"> All</span> with reproduction steps</div>
@@ -476,9 +476,9 @@ footer span{color:var(--ac)}
 <!-- PROJECTS -->
 <div class="fb" id="projects" style="background:#fff">
 <div class="fi">
-  <div class="ey">// 04  Automation Projects</div>
-  <div class="st">Frameworks built</div>
-  <div class="ss">Real automation projects  complete architecture, executable tests, CI/CD integration.</div>
+  <div class="ey" id="ey-4">// 04  Automation Projects</div>
+  <div class="st" id="st-4">Frameworks built</div>
+  <div class="ss" id="ss-4">Real automation projects  complete architecture, executable tests, CI/CD integration.</div>
   <div class="proj-grid">
     <div class="proj-card featured rv">
       <div>
@@ -495,7 +495,7 @@ footer span{color:var(--ac)}
           <div class="pf"><span class="pf-dot yellow"></span>Parallel execution  TestNG</div>
         </div>
         <div class="proj-actions">
-          <a href="https://github.com/akremhammamii" target="_blank" rel="noopener" class="btn-p" style="font-size:13px;padding:11px 22px">View on GitHub </a>
+          <a href="https://github.com/akremhammamii" target="_blank" rel="noopener" class="btn-p" style="font-size:13px;padding:11px 22px" id="proj-btn-1">View on GitHub </a>
           <span class="proj-badge">Open Source</span>
         </div>
       </div>
@@ -521,9 +521,9 @@ footer span{color:var(--ac)}
     </div>
     <div class="proj-card rv">
       <div class="proj-num">02</div>
-      <div class="proj-title">E-commerce Test Suite</div>
+      <div class="proj-title" id="proj-num-2">E-commerce Test Suite</div>
       <div class="proj-tech-line">Selenium  Java  TestNG  Allure</div>
-      <div class="proj-desc">Regression test suite for e-commerce application covering critical paths: login, search, cart, checkout, payment.</div>
+      <div class="proj-desc" id="proj-desc-2">Regression test suite for e-commerce application covering critical paths: login, search, cart, checkout, payment.</div>
       <div class="proj-features">
         <div class="pf"><span class="pf-dot green"></span>Login / Register flows</div>
         <div class="pf"><span class="pf-dot green"></span>Add to cart & checkout</div>
@@ -541,9 +541,9 @@ footer span{color:var(--ac)}
     </div>
     <div class="proj-card rv">
       <div class="proj-num">03</div>
-      <div class="proj-title">Jenkins CI/CD Pipeline</div>
+      <div class="proj-title" id="proj-num-3">Jenkins CI/CD Pipeline</div>
       <div class="proj-tech-line">Jenkins  GitHub Actions  Allure  Maven</div>
-      <div class="proj-desc">Automated CI/CD pipeline: Maven build, test execution, Allure report generation and failure notifications. Triggered on every push.</div>
+      <div class="proj-desc" id="proj-desc-3">Automated CI/CD pipeline: Maven build, test execution, Allure report generation and failure notifications. Triggered on every push.</div>
       <div class="proj-features">
         <div class="pf"><span class="pf-dot green"></span>Trigger on push / PR</div>
         <div class="pf"><span class="pf-dot green"></span>Allure report generation</div>
@@ -566,8 +566,8 @@ footer span{color:var(--ac)}
 <!-- LIVE RUNNER -->
 <div class="fb runner-bg" id="runner">
 <div class="fi">
-  <div class="rey">// 05  CI/CD Simulation</div>
-  <div class="rst">Live Test Execution</div>
+  <div class="rey" id="ey-5">// 05  CI/CD Simulation</div>
+  <div class="rst" id="st-5">Live Test Execution</div>
   <div class="rss">Run the tests and watch real-time execution  faithful to a real Maven pipeline.</div>
   <div class="rl">
     <div>
@@ -604,9 +604,9 @@ footer span{color:var(--ac)}
 <!-- ARCHITECTURE -->
 <div class="fb" id="arch">
 <div class="fi">
-  <div class="ey">// 06  Automation Framework</div>
-  <div class="st">Technical architecture</div>
-  <div class="ss">Click each layer to discover its role in the BDD framework.</div>
+  <div class="ey" id="ey-6">// 06  Automation Framework</div>
+  <div class="st" id="st-6">Technical architecture</div>
+  <div class="ss" id="ss-6">Click each layer to discover its role in the BDD framework.</div>
   <div class="arch-grid rv">
     <div class="arch-steps" id="asteps">
       <div class="astep act" data-i="0">
@@ -655,8 +655,8 @@ footer span{color:var(--ac)}
 <!-- BUGS -->
 <div class="fb bugs-bg" id="bugs">
 <div class="fi">
-  <div class="ey">// 07  Bug Hunter</div>
-  <div class="st">Documented bugs</div>
+  <div class="ey" id="ey-7">// 07  Bug Hunter</div>
+  <div class="st" id="st-7">Documented bugs</div>
   <div class="ss">Found on public QA demo applications  professional format: steps to reproduce, expected vs actual, severity.</div>
   <div class="bugs">
     <div class="bug hi rv">
@@ -728,8 +728,8 @@ footer span{color:var(--ac)}
 
 <!-- SKILLS -->
 <section id="skills" class="sec">
-  <div class="ey">// 08  Tech Stack</div>
-  <div class="st">What I master</div>
+  <div class="ey" id="ey-8">// 08  Tech Stack</div>
+  <div class="st" id="st-8">What I master</div>
   <div class="chips rv">
     <div class="chip ft"><span class="cdot" style="background:#6d28d9"></span>Selenium WebDriver</div>
     <div class="chip ft"><span class="cdot" style="background:#7c3aed"></span>Cucumber BDD</div>
@@ -751,8 +751,8 @@ footer span{color:var(--ac)}
 
 <!-- EXPERIENCE -->
 <section id="xp" class="sec">
-  <div class="ey">// 09  Career</div>
-  <div class="st">3 years at INETUM Tunisia</div>
+  <div class="ey" id="ey-9">// 09  Career</div>
+  <div class="st" id="st-9">3 years at INETUM Tunisia</div>
   <div class="exps">
     <div class="expc rv">
       <div class="epd">May 2024  Present</div>
@@ -781,9 +781,9 @@ footer span{color:var(--ac)}
 <!-- PROCESS -->
 <div class="fb process-bg" id="process">
 <div class="fi">
-  <div class="ey">// 10  Working Together</div>
-  <div class="st">My process</div>
-  <div class="ss">How I work with clients  from first contact to delivery and ongoing support.</div>
+  <div class="ey" id="ey-10">// 10  Working Together</div>
+  <div class="st" id="st-10">My process</div>
+  <div class="ss" id="ss-10">How I work with clients  from first contact to delivery and ongoing support.</div>
   <div class="process-grid rv">
     <div class="pstep">
       <div class="pstep-num">01</div>
@@ -870,26 +870,8 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 const blob=document.getElementById('blob');let mx=innerWidth/2,my=innerHeight/2;document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});(function a(){blob.style.left=mx+'px';blob.style.top=(my+scrollY)+'px';requestAnimationFrame(a)})();
 let running=false;let activeIndex=0;let lang='EN';
-const I18N_FR={
-  "nav-cta-txt":"Contactez-moi ",
-  "badge-txt":"Disponible immédiatement  Ariana, Tunisie",
-  "hero-title":"Je teste. Je casse. Je <span class=\"aw\">garantis</span> la qualité.",
-  "hero-sub":"<strong>Akrem Hammami</strong>  Ingénieur QA Automation avec 3 ans d'expérience en <strong>Selenium / Java / BDD</strong>. Certifié ISTQB. Secteurs : Assurance, SaaS, ERP.",
-  "contact-title":"Travaillons ensemble ",
-  "contact-sub":"Disponible immédiatement pour de nouvelles opportunités QA.",
-  "footer-txt":" 2025 <span>Akrem Hammami</span>  Ingénieur QA Automation  Ariana, Tunisie"
-,
-  "consult-btn":"Commencez par une consultation gratuite →"};
-const I18N_EN={
-  "nav-cta-txt":"Get in touch ",
-  "badge-txt":"Available immediately  Ariana, Tunisia",
-  "hero-title":"I test. I break. I <span class=\"aw\">guarantee</span> quality.",
-  "hero-sub":"<strong>Akrem Hammami</strong>  QA Automation Engineer with 3 years of experience in <strong>Selenium / Java / BDD</strong>. ISTQB Certified. Sectors: Insurance, SaaS, ERP.",
-  "contact-title":"Let's work together ",
-  "contact-sub":"Available immediately for new QA opportunities.",
-  "footer-txt":" 2025 <span>Akrem Hammami</span>  QA Automation Engineer  Ariana, Tunisia"
-,
-  "consult-btn":"Start with a free consultation →"};
+const I18N_FR={"nav-links-impact": "Impact", "nav-links-metrics": "Métriques", "nav-links-projects": "Projets", "nav-links-tests": "Tests en Direct", "nav-links-xp": "Expérience", "nav-cta-txt": "Contactez-moi ", "badge-txt": "Disponible immédiatement  Ariana, Tunisie", "hero-title": "Je teste. Je casse. Je <span class=\"aw\">garantis</span> la qualité.", "hero-sub": "<strong>Akrem Hammami</strong>  Ingénieur QA Automation avec 3 ans d'expérience en <strong>Selenium / Java / BDD</strong>. Certifié ISTQB. Secteurs : Assurance, SaaS, ERP.", "btn-p-hero": "Contactez-moi ", "btn-g-hero": "Voir GitHub", "stat-l-1": "Tests automatisés", "stat-l-2": "Taux de réussite", "stat-l-3": "Ans d'expérience", "stat-l-4": "Certifié", "hero-photo-label": "Ingénieur QA Automation", "hero-photo-click": "Cliquez pour ajouter une photo", "ey-1": "// 01  Impact", "st-1": "Ce que j'apporte à une équipe", "ss-1": "Contributions concrètes de mon travail chez INETUM  comment l'automatisation a changé la façon dont les équipes livrent des logiciels de qualité.", "rc-val-1": "Moins", "rc-lbl-1": "Bugs en Production", "rc-desc-1": "Grâce à la détection proactive des défauts à l'aide de suites de régression automatisées avant chaque version", "rc-val-2": "Rapide", "rc-lbl-2": "Cycles de Régression", "rc-desc-2": "L'automatisation des tests de régression répétitifs a libéré du temps de test manuel pour les tests exploratoires et les cas limites", "rc-val-3": "Fiable", "rc-lbl-3": "Pipelines CI/CD", "rc-desc-3": "Intégration d'Allure et des pipelines GitHub Actions pour un retour instantané sur chaque changement de code", "ey-2": "// 02  Recommandation", "st-2": "Ce que dit mon manager", "ey-3": "// 03  Métriques de Qualité", "st-3": "Mon tableau de bord QA", "ss-3": "De vrais chiffres de mon travail d'automatisation des métriques honnêtes qui reflètent mon niveau d'expérience réel.", "ml-1": "Couverture d'Automatisation", "ml-2": "Tests Écrits", "ml-3": "Taux de Réussite", "ml-4": "Bugs Documentés", "ey-4": "// 04  Projets d'Automatisation", "st-4": "Frameworks construits", "ss-4": "Vrais projets d'automatisation architecture complète, tests exécutables, intégration CI/CD.", "proj-btn-1": "Voir sur GitHub ", "proj-num-2": "Suite de Tests E-commerce", "proj-desc-2": "Suite de tests de régression pour l'application e-commerce couvrant les chemins critiques : connexion, recherche, panier, paiement.", "proj-num-3": "Pipeline CI/CD Jenkins", "proj-desc-3": "Pipeline CI/CD automatisé : compilation Maven, exécution des tests, génération de rapport Allure et notifications d'échec. Déclenché à chaque push.", "ey-5": "// 05  Simulation CI/CD", "st-5": "Exécution de Tests en Direct", "runBtn": " Lancer la Suite d'Automatisation", "rstBtn": " Réinitialiser", "ey-6": "// 06  Framework d'Automatisation", "st-6": "Architecture technique", "ss-6": "Cliquez sur chaque couche pour découvrir son rôle dans le framework BDD.", "ey-7": "// 07  Chasseur de Bugs", "st-7": "Bugs documentés", "ey-8": "// 08  Pile Technologique", "st-8": "Ce que je maîtrise", "ey-9": "// 09  Carrière", "st-9": "3 ans chez INETUM Tunisie", "ey-10": "// 10  Travailler Ensemble", "st-10": "Mon processus", "ss-10": "Comment je travaille avec les clients du premier contact à la livraison et au support continu.", "contact-title": "Travaillons ensemble ", "contact-sub": "Disponible immédiatement pour de nouvelles opportunités QA  Remote / Hybride / Sur site  Courant en français, anglais, arabe", "consult-btn": "Commencez par une consultation gratuite ", "footer-txt": " 2025 <span>Akrem Hammami</span>  Ingénieur QA Automation  Ariana, Tunisie"};
+const I18N_EN={"nav-links-impact": "Impact", "nav-links-metrics": "Metrics", "nav-links-projects": "Projects", "nav-links-tests": "Live Tests", "nav-links-xp": "Experience", "nav-cta-txt": "Get in touch ", "badge-txt": "Available immediately  Ariana, Tunisia", "hero-title": "Je teste. Je casse. Je <span class=\"aw\">garantis</span> la qualité.", "hero-sub": "<strong>Akrem Hammami</strong>  QA Automation Engineer with 3 years of experience in <strong>Selenium / Java / BDD</strong>. ISTQB Certified. Sectors: Insurance, SaaS, ERP.", "btn-p-hero": "Get in touch ", "btn-g-hero": "View GitHub", "stat-l-1": "Tests automated", "stat-l-2": "Pass rate", "stat-l-3": "Years experience", "stat-l-4": "Certified", "hero-photo-label": "QA Automation Engineer", "hero-photo-click": "Click to add photo", "ey-1": "// 01  Impact", "st-1": "What I bring to a team", "ss-1": "Concrete contributions from my work at INETUM  how automation changed the way teams deliver quality software.", "rc-val-1": "Fewer", "rc-lbl-1": "Production Bugs", "rc-desc-1": "Through proactive defect detection using automated regression suites before each release", "rc-val-2": "Faster", "rc-lbl-2": "Regression Cycles", "rc-desc-2": "Automating repetitive regression tests freed up manual testing time for exploratory and edge-case testing", "rc-val-3": "Reliable", "rc-lbl-3": "CI/CD Pipelines", "rc-desc-3": "Integrated Allure reporting and GitHub Actions pipelines for instant feedback on every code change", "ey-2": "// 02  Recommendation", "st-2": "What my manager says", "ey-3": "// 03  Quality Metrics", "st-3": "My QA dashboard", "ss-3": "Real numbers from my automation work  honest metrics that reflect my actual experience level.", "ml-1": "Automation Coverage", "ml-2": "Tests Written", "ml-3": "Pass Rate", "ml-4": "Bugs Documented", "ey-4": "// 04  Automation Projects", "st-4": "Frameworks built", "ss-4": "Real automation projects  complete architecture, executable tests, CI/CD integration.", "proj-btn-1": "View on GitHub ", "proj-num-2": "E-commerce Test Suite", "proj-desc-2": "Regression test suite for e-commerce application covering critical paths: login, search, cart, checkout, payment.", "proj-num-3": "Jenkins CI/CD Pipeline", "proj-desc-3": "Automated CI/CD pipeline: Maven build, test execution, Allure report generation and failure notifications. Triggered on every push.", "ey-5": "// 05  CI/CD Simulation", "st-5": "Live Test Execution", "runBtn": " Run Automation Suite", "rstBtn": " Reset", "ey-6": "// 06  Automation Framework", "st-6": "Technical architecture", "ss-6": "Click each layer to discover its role in the BDD framework.", "ey-7": "// 07  Bug Hunter", "st-7": "Documented bugs", "ey-8": "// 08  Tech Stack", "st-8": "What I master", "ey-9": "// 09  Career", "st-9": "3 years at INETUM Tunisia", "ey-10": "// 10  Working Together", "st-10": "My process", "ss-10": "How I work with clients  from first contact to delivery and ongoing support.", "contact-title": "Let's work together ", "contact-sub": "Available immediately for new QA opportunities  Remote / Hybrid / On-site  Fluent in French, English, Arabic", "consult-btn": "Start with a free consultation ", "footer-txt": " 2025 <span>Akrem Hammami</span>  QA Automation Engineer  Ariana, Tunisia"};
 
 function toggleLang(){
   lang=(lang==='EN')?'FR':'EN';
