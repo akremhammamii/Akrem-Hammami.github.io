@@ -313,7 +313,7 @@ footer span{color:var(--ac)}
 
 <!-- NAV -->
 <nav>
-  <a href="#home" class="logo">A<span>H</span></a>
+  <a href="#home" class="logo" aria-label="Back to top">A<span>H</span></a>
   <ul class="nav-links">
     <li><a href="#results" id="nav-links-impact">Impact</a></li>
     <li><a href="#dashboard" id="nav-links-metrics">Metrics</a></li>
@@ -322,8 +322,8 @@ footer span{color:var(--ac)}
     <li><a href="#xp" id="nav-links-xp">Experience</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:10px">
-    <button id="langBtn" onclick="toggleLang()" style="background:transparent;border:1px solid var(--b2);color:var(--fg2);font-family:var(--mono);font-size:11px;font-weight:600;padding:7px 14px;border-radius:100px;cursor:pointer;transition:all .2s;letter-spacing:.08em">FR</button>
-    <a href="#contact" class="nav-cta" id="nav-cta-txt">Get in touch </a>
+    <button id="langBtn" onclick="toggleLang()" aria-label="Toggle language" style="background:transparent;border:1px solid var(--b2);color:var(--fg2);font-family:var(--mono);font-size:11px;font-weight:600;padding:7px 14px;border-radius:100px;cursor:pointer;transition:all .2s;letter-spacing:.08em">FR</button>
+    <a href="#contact" class="nav-cta" id="nav-cta-txt" aria-label="Contact section">Get in touch </a>
   </div>
 </nav>
 
@@ -337,8 +337,8 @@ footer span{color:var(--ac)}
     </h1>
     <p class="hero-sub" id="hero-sub"><strong>Akrem Hammami</strong>  QA Automation Engineer with 3 years of experience in <strong>Selenium / Java / BDD</strong>. ISTQB Certified. Sectors: Insurance, SaaS, ERP.</p>
     <div class="hero-btns">
-      <a href="#contact" class="btn-p" id="btn-p-hero">Get in touch </a>
-      <a href="https://github.com/akremhammamii" target="_blank" rel="noopener" class="btn-g" id="btn-g-hero">View GitHub</a>
+      <a href="#contact" class="btn-p" id="btn-p-hero" aria-label="Contact section">Get in touch </a>
+      <a href="https://github.com/akremhammamii" target="_blank" rel="noopener" class="btn-g" id="btn-g-hero" aria-label="View GitHub profile">View GitHub</a>
     </div>
     <div class="stats">
       <div><div class="stat-n">50<sup>+</sup></div><div class="stat-l" id="stat-l-1">Tests automated</div></div>
@@ -349,7 +349,7 @@ footer span{color:var(--ac)}
   </div>
   <div class="hero-right">
   <div class="hero-photo-wrap">
-    <img class="hero-photo-img" src="assets/profile.png" alt="Akrem Hammami portrait"/>
+    <img class="hero-photo-img" src="assets/profile.png" alt="Portrait of Akrem Hammami"/>
   </div>
 </div>
 </section>
@@ -567,8 +567,8 @@ footer span{color:var(--ac)}
   <div class="rl">
     <div>
       <div class="rctrl">
-        <button class="run-btn" id="runBtn"> Run Automation Suite</button>
-        <button class="rst-btn" id="rstBtn"> Reset</button>
+        <button class="run-btn" id="runBtn" aria-label="Run automation suite"> Run Automation Suite</button>
+        <button class="rst-btn" id="rstBtn" aria-label="Reset runner output"> Reset</button>
       </div>
       <div class="term">
         <div class="tbar">
@@ -817,19 +817,19 @@ footer span{color:var(--ac)}
     <div class="ctit" id="contact-title">Let's work together </div>
     <p class="csub" id="contact-sub">Available immediately for new QA opportunities  Remote / Hybrid / On-site  Fluent in French, English, Arabic</p>
     <div class="clinks">
-      <a class="clink" href="mailto:hammami-akrem@outlook.com">
+      <a class="clink" href="mailto:hammami-akrem@outlook.com" aria-label="Send email to Akrem Hammami">
         <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,6 12,13 22,6"/></svg>
         hammami-akrem@outlook.com
       </a>
-      <a class="clink" href="https://github.com/akremhammamii" target="_blank" rel="noopener">
+      <a class="clink" href="https://github.com/akremhammamii" target="_blank" rel="noopener" aria-label="Open GitHub profile">
         <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
         github.com/akremhammamii
       </a>
-      <a class="clink" href="https://www.linkedin.com/in/akrem-hammami/" target="_blank" rel="noopener">
+      <a class="clink" href="https://www.linkedin.com/in/akrem-hammami/" target="_blank" rel="noopener" aria-label="Open LinkedIn profile">
         <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn Profile
       </a>
-      <a class="clink" href="tel:+21655093323">
+      <a class="clink" href="tel:+21655093323" aria-label="Call Akrem Hammami">
         <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l1.62-1.62a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         +216 55 093 323
       </a>
@@ -1306,10 +1306,24 @@ if(document.getElementById('mrow')) mObs.observe(document.getElementById('mrow')
 const spark=document.getElementById('spark');
 if(spark){
   const vals=[12,18,15,32,28,50];
-  vals.forEach(v=>{
-    let b=document.createElement('div');b.className='sb';b.style.height=(v*1.2)+'px';
-    b.style.background='var(--ac)';b.dataset.v=v;spark.appendChild(b);
+  vals.forEach((v,i)=>{
+    let b=document.createElement('div');
+    b.className='sb';
+    b.style.height='4px';
+    b.style.background='var(--ac)';
+    b.style.transition=`height ${0.6+i*0.08}s cubic-bezier(.16,1,.3,1)`;
+    b.dataset.v=v;
+    b.dataset.h=(v*1.2);
+    spark.appendChild(b);
   });
+  const sparkObs=new IntersectionObserver(entries=>{
+    if(!entries[0].isIntersecting)return;
+    sparkObs.disconnect();
+    spark.querySelectorAll('.sb').forEach(b=>{
+      b.style.height=b.dataset.h+'px';
+    });
+  },{threshold:0.3});
+  sparkObs.observe(spark);
 }
 
 const runBtn=document.getElementById('runBtn'),rstBtn=document.getElementById('rstBtn'),tbody=document.getElementById('tbody'),rpfill=document.getElementById('rpfill'),stt=document.getElementById('stt'),sps=document.getElementById('sps'),sfl=document.getElementById('sfl'),tcards=document.getElementById('tcards');
@@ -1322,6 +1336,22 @@ const tests=[
   {n:"Checkout Validation",s:"pass",t:"1200ms"}
 ];
 
+function resetRunner(){
+  running=false;
+  if(runBtn) runBtn.disabled=false;
+  if(tbody){
+    tbody.innerHTML='<div><span class="tp">$</span> <span class="td2">mvn clean test -Denv=staging</span></div>'
+      + '<div><span class="td2"> QA Framework  Selenium + Cucumber + Java </span></div>'
+      + '<div>&nbsp;</div>'
+      + '<div><span class="td2">Press Run to start...</span> <span class="tcur"></span></div>';
+  }
+  if(tcards) tcards.innerHTML='';
+  if(stt) stt.innerText='0';
+  if(sps) sps.innerText='0';
+  if(sfl) sfl.innerText='0';
+  if(rpfill) rpfill.style.width='0%';
+}
+
 if(runBtn){
 runBtn.onclick=async()=>{
   if(running)return;running=true;runBtn.disabled=true;
@@ -1333,6 +1363,7 @@ runBtn.onclick=async()=>{
     let l=document.createElement('div');l.innerHTML=`<span class="ti">RUN</span> <span class="td2">${t.n}...</span>`;tbody.appendChild(l);
     tbody.scrollTop=tbody.scrollHeight;
     await new Promise(r=>setTimeout(r,600));
+    if(!running)return;
     if(t.s==='pass')p++;else f++;
     l.innerHTML=`<span class="tps">PASS</span> <span class="td2">${t.n} (${t.t})</span>`;
     if(t.s==='fail')l.innerHTML=`<span class="tf">FAIL</span> <span class="td2">${t.n} (${t.t})</span>`;
@@ -1346,7 +1377,7 @@ runBtn.onclick=async()=>{
   running=false;runBtn.disabled=false;
 };
 }
-if(rstBtn) rstBtn.onclick=()=>{location.reload()};
+if(rstBtn) rstBtn.onclick=resetRunner;
 
 document.querySelectorAll('.astep').forEach(s=>{
   s.onclick=()=>{
