@@ -852,7 +852,8 @@ footer span{color:var(--ac)}
 
 <script>
 const blob=document.getElementById('blob');let mx=innerWidth/2,my=innerHeight/2;document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});(function a(){blob.style.left=mx+'px';blob.style.top=(my+scrollY)+'px';requestAnimationFrame(a)})();
-let running=false;let activeIndex=0;let lang='EN';
+let running=false;let activeIndex=0;
+let lang=((navigator.language||'en').toLowerCase().startsWith('fr'))?'FR':'EN';
 const I18N_FR={
   "nav-links-impact": "Impact",
   "nav-links-metrics": "Métriques",
@@ -1222,6 +1223,11 @@ const EXTRA_EN={
   ptime: [`30 min · Free`,`2–3 days`,`2–4 weeks`,`Continuous`]
 };
 
+const I18N={
+  FR:{base:I18N_FR,extra:EXTRA_FR},
+  EN:{base:I18N_EN,extra:EXTRA_EN}
+};
+
 function applyExtras(t){
   if(!t)return;
   const q=(sel)=>document.querySelector(sel);
@@ -1283,10 +1289,11 @@ function applyExtras(t){
   qa('#process .pstep-time').forEach((el,i)=>setText(el, t.ptime&&t.ptime[i]));
 }
 
-function toggleLang(){
-  lang=(lang==='EN')?'FR':'EN';
-  const data=lang==='FR'?I18N_FR:I18N_EN;
-  document.getElementById('langBtn').innerText=lang==='EN'?'FR':'EN';
+function setLang(next){
+  lang=I18N[next]?next:'EN';
+  const data=I18N[lang].base;
+  const btn=document.getElementById('langBtn');
+  if(btn) btn.innerText=lang==='EN'?'FR':'EN';
   for(let id in data){
     let el=document.getElementById(id);
     if(el){
@@ -1297,10 +1304,14 @@ function toggleLang(){
       }
     }
   }
-  applyExtras(lang==='FR'?EXTRA_FR:EXTRA_EN);
+  applyExtras(I18N[lang].extra);
 }
 
-applyExtras(lang==='FR'?EXTRA_FR:EXTRA_EN);
+function toggleLang(){
+  setLang(lang==='EN'?'FR':'EN');
+}
+
+setLang(lang);
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')})},{threshold:0.1});
 document.querySelectorAll('.rv').forEach(r=>obs.observe(r));
 
